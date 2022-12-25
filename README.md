@@ -9,9 +9,9 @@ This project uses two instances of the Audibot simulator that was used throughou
 
 ## Audibot Urban Navigation
 
-This project uses the same Audibot simulator that was used throughout the course, but it is spawned in `road_world` with a camera to detect lane markings. The goal is to navigate around this world making turns at intersections to reach a goal. For more details, see the [project-specific README](audibot_urban_nav/README.md)
+This project uses the same Audibot simulator that was used throughout the course, but it is spawned in `urban_world` with a camera to detect lane markings. The goal is to navigate around this world making turns at intersections to reach a goal. For more details, see the [project-specific README](audibot_urban_nav/README.md)
 
-![Road World](img/road_world.png)
+![Road World](img/urban_world.png)
 
 ## IGVC Simulation
 

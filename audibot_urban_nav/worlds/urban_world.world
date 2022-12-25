@@ -1,0 +1,2340 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10000 10000</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10000 10000</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/road_textures.material</uri>
+              <name>UGVLecture/GrassBackground</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+    </model>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0 0.9 0.9 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>5 -5 2 0 0.275643 2.35619</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <model name="road_intersection_0">
+      <pose>170 147 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_0</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_1">
+      <pose>170 32 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_1</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_2">
+      <pose>356 147 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_2</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_3">
+      <pose>241 97 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_3</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_4">
+      <pose>200 355 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_4</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_5">
+      <pose>257 297 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_5</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_6">
+      <pose>200 290 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_6</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_7">
+      <pose>-150 275 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_7</name>
+        <uri>model://road_intersection_with_lights</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_8">
+      <pose>-38 297 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_8</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_9">
+      <pose>-215 275 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_9</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_10">
+      <pose>241 32 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_10</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_11">
+      <pose>356 32 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_11</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_12">
+      <pose>460 275 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_12</name>
+        <uri>model://road_intersection_with_lights</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_13">
+      <pose>406 117 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_13</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_14">
+      <pose>570 167 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_14</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_15">
+      <pose>291 147 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_15</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <model name="road_intersection_18">
+      <pose>356 -32 0.0 0.0 0.0 0</pose>
+      <static>0</static>
+      <include>
+        <name>road_intersection_18</name>
+        <uri>model://road_intersection</uri>
+        <static>0</static>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    <road name="road_0">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>-207 275 0.005</point>
+      <point>-158 275 0.005</point>
+    </road>
+    <road name="road_1">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>348 -32 0.005</point>
+      <point>-100 -32 0.005</point>
+    </road>
+    <road name="road_2">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>-100 -32 0.005</point>
+      <point>-100.629 -31.9971 0.005</point>
+      <point>-101.254 -31.9883 0.005</point>
+      <point>-101.877 -31.9736 0.005</point>
+      <point>-102.496 -31.9532 0.005</point>
+      <point>-103.113 -31.9269 0.005</point>
+      <point>-103.726 -31.8949 0.005</point>
+      <point>-104.337 -31.8571 0.005</point>
+      <point>-104.944 -31.8136 0.005</point>
+      <point>-105.548 -31.7644 0.005</point>
+      <point>-106.15 -31.7094 0.005</point>
+      <point>-106.748 -31.6488 0.005</point>
+      <point>-107.342 -31.5826 0.005</point>
+      <point>-107.934 -31.5107 0.005</point>
+      <point>-108.522 -31.4332 0.005</point>
+      <point>-109.108 -31.3501 0.005</point>
+      <point>-109.69 -31.2614 0.005</point>
+      <point>-110.186 -31.181 0.005</point>
+      <point>-110.68 -31.0965 0.005</point>
+      <point>-111.171 -31.008 0.005</point>
+      <point>-111.66 -30.9154 0.005</point>
+      <point>-112.146 -30.8188 0.005</point>
+      <point>-112.63 -30.7182 0.005</point>
+      <point>-113.112 -30.6136 0.005</point>
+      <point>-113.591 -30.505 0.005</point>
+      <point>-114.068 -30.3924 0.005</point>
+      <point>-114.542 -30.2758 0.005</point>
+      <point>-115.013 -30.1554 0.005</point>
+      <point>-115.482 -30.0309 0.005</point>
+      <point>-115.948 -29.9026 0.005</point>
+      <point>-116.412 -29.7703 0.005</point>
+      <point>-116.873 -29.6342 0.005</point>
+      <point>-117.332 -29.4941 0.005</point>
+      <point>-117.788 -29.3502 0.005</point>
+      <point>-118.242 -29.2025 0.005</point>
+      <point>-118.692 -29.0509 0.005</point>
+      <point>-119.14 -28.8954 0.005</point>
+      <point>-119.586 -28.7362 0.005</point>
+      <point>-120.029 -28.5731 0.005</point>
+      <point>-120.469 -28.4062 0.005</point>
+      <point>-120.906 -28.2356 0.005</point>
+      <point>-121.341 -28.0612 0.005</point>
+      <point>-121.773 -27.883 0.005</point>
+      <point>-122.202 -27.7011 0.005</point>
+      <point>-122.628 -27.5155 0.005</point>
+      <point>-123.052 -27.3262 0.005</point>
+      <point>-123.473 -27.1331 0.005</point>
+      <point>-123.891 -26.9364 0.005</point>
+      <point>-124.307 -26.736 0.005</point>
+      <point>-124.719 -26.5319 0.005</point>
+      <point>-125.129 -26.3242 0.005</point>
+      <point>-125.536 -26.1128 0.005</point>
+      <point>-125.94 -25.8978 0.005</point>
+      <point>-126.341 -25.6792 0.005</point>
+      <point>-126.739 -25.457 0.005</point>
+      <point>-127.134 -25.2313 0.005</point>
+      <point>-127.527 -25.0019 0.005</point>
+      <point>-127.916 -24.769 0.005</point>
+      <point>-128.303 -24.5325 0.005</point>
+      <point>-128.686 -24.2925 0.005</point>
+      <point>-129.067 -24.049 0.005</point>
+      <point>-129.445 -23.802 0.005</point>
+      <point>-129.82 -23.5515 0.005</point>
+      <point>-130.191 -23.2975 0.005</point>
+      <point>-130.56 -23.04 0.005</point>
+      <point>-130.926 -22.7791 0.005</point>
+      <point>-131.288 -22.5147 0.005</point>
+      <point>-131.648 -22.2469 0.005</point>
+      <point>-132.004 -21.9757 0.005</point>
+      <point>-132.358 -21.7011 0.005</point>
+      <point>-132.708 -21.4231 0.005</point>
+      <point>-133.056 -21.1417 0.005</point>
+      <point>-133.4 -20.8569 0.005</point>
+      <point>-133.741 -20.5688 0.005</point>
+      <point>-134.079 -20.2774 0.005</point>
+      <point>-134.413 -19.9826 0.005</point>
+      <point>-134.745 -19.6845 0.005</point>
+      <point>-135.073 -19.3831 0.005</point>
+      <point>-135.399 -19.0784 0.005</point>
+      <point>-135.721 -18.7705 0.005</point>
+      <point>-136.039 -18.4593 0.005</point>
+      <point>-136.355 -18.1448 0.005</point>
+      <point>-136.667 -17.8271 0.005</point>
+      <point>-136.976 -17.5062 0.005</point>
+      <point>-137.282 -17.1821 0.005</point>
+      <point>-137.584 -16.8548 0.005</point>
+      <point>-137.884 -16.5242 0.005</point>
+      <point>-138.179 -16.1906 0.005</point>
+      <point>-138.472 -15.8537 0.005</point>
+      <point>-138.761 -15.5137 0.005</point>
+      <point>-139.047 -15.1706 0.005</point>
+      <point>-139.33 -14.8244 0.005</point>
+      <point>-139.609 -14.4751 0.005</point>
+      <point>-139.885 -14.1226 0.005</point>
+      <point>-140.157 -13.7671 0.005</point>
+      <point>-140.426 -13.4085 0.005</point>
+      <point>-140.691 -13.0469 0.005</point>
+      <point>-140.953 -12.6822 0.005</point>
+      <point>-141.212 -12.3145 0.005</point>
+      <point>-141.467 -11.9438 0.005</point>
+      <point>-141.719 -11.5701 0.005</point>
+      <point>-141.967 -11.1934 0.005</point>
+      <point>-142.212 -10.8137 0.005</point>
+      <point>-142.453 -10.431 0.005</point>
+      <point>-142.691 -10.0454 0.005</point>
+      <point>-142.925 -9.6569 0.005</point>
+      <point>-143.155 -9.26544 0.005</point>
+      <point>-143.382 -8.87106 0.005</point>
+      <point>-143.606 -8.47379 0.005</point>
+      <point>-143.825 -8.07363 0.005</point>
+      <point>-144.042 -7.6706 0.005</point>
+      <point>-144.254 -7.26471 0.005</point>
+      <point>-144.463 -6.85597 0.005</point>
+      <point>-144.668 -6.44439 0.005</point>
+      <point>-144.87 -6.03 0.005</point>
+      <point>-145.068 -5.6128 0.005</point>
+      <point>-145.262 -5.1928 0.005</point>
+      <point>-145.453 -4.77002 0.005</point>
+      <point>-145.64 -4.34447 0.005</point>
+      <point>-145.823 -3.91617 0.005</point>
+      <point>-146.002 -3.48512 0.005</point>
+      <point>-146.178 -3.05134 0.005</point>
+      <point>-146.35 -2.61485 0.005</point>
+      <point>-146.518 -2.17565 0.005</point>
+      <point>-146.682 -1.73376 0.005</point>
+      <point>-146.843 -1.28919 0.005</point>
+      <point>-146.999 -0.841956 0.005</point>
+      <point>-147.152 -0.39207 0.005</point>
+      <point>-147.301 0.060457 0.005</point>
+      <point>-147.447 0.51561 0.005</point>
+      <point>-147.588 0.973377 0.005</point>
+      <point>-147.725 1.43374 0.005</point>
+      <point>-147.859 1.8967 0.005</point>
+      <point>-147.989 2.36223 0.005</point>
+      <point>-148.114 2.83032 0.005</point>
+      <point>-148.236 3.30096 0.005</point>
+      <point>-148.354 3.77414 0.005</point>
+      <point>-148.468 4.24984 0.005</point>
+      <point>-148.578 4.72804 0.005</point>
+      <point>-148.684 5.20875 0.005</point>
+      <point>-148.786 5.69194 0.005</point>
+      <point>-148.884 6.1776 0.005</point>
+      <point>-148.978 6.66572 0.005</point>
+      <point>-149.067 7.15628 0.005</point>
+      <point>-149.153 7.64928 0.005</point>
+      <point>-149.235 8.1447 0.005</point>
+      <point>-149.313 8.64252 0.005</point>
+      <point>-149.398 9.22633 0.005</point>
+      <point>-149.478 9.81339 0.005</point>
+      <point>-149.552 10.4037 0.005</point>
+      <point>-149.621 10.9971 0.005</point>
+      <point>-149.684 11.5938 0.005</point>
+      <point>-149.742 12.1936 0.005</point>
+      <point>-149.793 12.7965 0.005</point>
+      <point>-149.839 13.4025 0.005</point>
+      <point>-149.879 14.0117 0.005</point>
+      <point>-149.914 14.6239 0.005</point>
+      <point>-149.943 15.2391 0.005</point>
+      <point>-149.966 15.8574 0.005</point>
+      <point>-149.983 16.4787 0.005</point>
+      <point>-149.994 17.103 0.005</point>
+      <point>-149.999 17.7303 0.005</point>
+      <point>-150 18 0.005</point>
+    </road>
+    <road name="road_3">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>-150 18 0.005</point>
+      <point>-150 267 0.005</point>
+    </road>
+    <road name="road_4">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>356 -24 0.005</point>
+      <point>356 24 0.005</point>
+    </road>
+    <road name="road_5">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>348 32 0.005</point>
+      <point>249 32 0.005</point>
+    </road>
+    <road name="road_6">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>233 32 0.005</point>
+      <point>178 32 0.005</point>
+    </road>
+    <road name="road_7">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>170 40 0.005</point>
+      <point>170 139 0.005</point>
+    </road>
+    <road name="road_8">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>241 40 0.005</point>
+      <point>241 89 0.005</point>
+    </road>
+    <road name="road_9">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>356 40 0.005</point>
+      <point>356 139 0.005</point>
+    </road>
+    <road name="road_10">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>348 147 0.005</point>
+      <point>299 147 0.005</point>
+    </road>
+    <road name="road_11">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>200 347 0.005</point>
+      <point>200 298 0.005</point>
+    </road>
+    <road name="road_12">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>208 355 0.005</point>
+      <point>208.895 354.996 0.005</point>
+      <point>209.778 354.983 0.005</point>
+      <point>210.651 354.962 0.005</point>
+      <point>211.513 354.932 0.005</point>
+      <point>212.364 354.894 0.005</point>
+      <point>213.204 354.848 0.005</point>
+      <point>213.896 354.803 0.005</point>
+      <point>214.581 354.753 0.005</point>
+      <point>215.259 354.697 0.005</point>
+      <point>215.929 354.636 0.005</point>
+      <point>216.592 354.569 0.005</point>
+      <point>217.248 354.497 0.005</point>
+      <point>217.897 354.42 0.005</point>
+      <point>218.539 354.338 0.005</point>
+      <point>219.174 354.25 0.005</point>
+      <point>219.801 354.157 0.005</point>
+      <point>220.422 354.059 0.005</point>
+      <point>221.036 353.956 0.005</point>
+      <point>221.643 353.848 0.005</point>
+      <point>222.243 353.735 0.005</point>
+      <point>222.836 353.617 0.005</point>
+      <point>223.422 353.495 0.005</point>
+      <point>224.002 353.367 0.005</point>
+      <point>224.575 353.235 0.005</point>
+      <point>225.141 353.098 0.005</point>
+      <point>225.701 352.957 0.005</point>
+      <point>226.254 352.811 0.005</point>
+      <point>226.8 352.66 0.005</point>
+      <point>227.34 352.505 0.005</point>
+      <point>227.874 352.345 0.005</point>
+      <point>228.296 352.215 0.005</point>
+      <point>228.714 352.081 0.005</point>
+      <point>229.128 351.945 0.005</point>
+      <point>229.538 351.806 0.005</point>
+      <point>229.944 351.665 0.005</point>
+      <point>230.346 351.52 0.005</point>
+      <point>230.744 351.373 0.005</point>
+      <point>231.138 351.224 0.005</point>
+      <point>231.528 351.072 0.005</point>
+      <point>231.914 350.917 0.005</point>
+      <point>232.296 350.76 0.005</point>
+      <point>232.674 350.6 0.005</point>
+      <point>233.049 350.438 0.005</point>
+      <point>233.419 350.274 0.005</point>
+      <point>233.786 350.107 0.005</point>
+      <point>234.148 349.937 0.005</point>
+      <point>234.508 349.766 0.005</point>
+      <point>234.863 349.592 0.005</point>
+      <point>235.214 349.415 0.005</point>
+      <point>235.562 349.237 0.005</point>
+      <point>235.906 349.056 0.005</point>
+      <point>236.246 348.873 0.005</point>
+      <point>236.583 348.687 0.005</point>
+      <point>236.916 348.5 0.005</point>
+      <point>237.245 348.31 0.005</point>
+      <point>237.571 348.118 0.005</point>
+      <point>237.893 347.924 0.005</point>
+      <point>238.212 347.729 0.005</point>
+      <point>238.527 347.531 0.005</point>
+      <point>238.838 347.331 0.005</point>
+      <point>239.146 347.129 0.005</point>
+      <point>239.451 346.925 0.005</point>
+      <point>239.752 346.719 0.005</point>
+      <point>240.049 346.511 0.005</point>
+      <point>240.343 346.301 0.005</point>
+      <point>240.634 346.09 0.005</point>
+      <point>240.921 345.877 0.005</point>
+      <point>241.205 345.662 0.005</point>
+      <point>241.486 345.445 0.005</point>
+      <point>241.763 345.226 0.005</point>
+      <point>242.037 345.006 0.005</point>
+      <point>242.307 344.784 0.005</point>
+      <point>242.575 344.56 0.005</point>
+      <point>242.839 344.335 0.005</point>
+      <point>243.099 344.108 0.005</point>
+      <point>243.357 343.879 0.005</point>
+      <point>243.611 343.649 0.005</point>
+      <point>243.863 343.418 0.005</point>
+      <point>244.111 343.185 0.005</point>
+      <point>244.356 342.95 0.005</point>
+      <point>244.597 342.714 0.005</point>
+      <point>244.836 342.476 0.005</point>
+      <point>245.072 342.238 0.005</point>
+      <point>245.304 341.997 0.005</point>
+      <point>245.534 341.756 0.005</point>
+      <point>245.76 341.513 0.005</point>
+      <point>245.984 341.269 0.005</point>
+      <point>246.204 341.023 0.005</point>
+      <point>246.422 340.777 0.005</point>
+      <point>246.636 340.529 0.005</point>
+      <point>246.848 340.28 0.005</point>
+      <point>247.057 340.03 0.005</point>
+      <point>247.263 339.779 0.005</point>
+      <point>247.466 339.526 0.005</point>
+      <point>247.666 339.273 0.005</point>
+      <point>247.863 339.018 0.005</point>
+      <point>248.058 338.763 0.005</point>
+      <point>248.25 338.506 0.005</point>
+      <point>248.486 338.184 0.005</point>
+      <point>248.717 337.861 0.005</point>
+      <point>248.945 337.536 0.005</point>
+      <point>249.168 337.21 0.005</point>
+      <point>249.387 336.882 0.005</point>
+      <point>249.602 336.553 0.005</point>
+      <point>249.813 336.223 0.005</point>
+      <point>250.019 335.892 0.005</point>
+      <point>250.222 335.56 0.005</point>
+      <point>250.421 335.227 0.005</point>
+      <point>250.616 334.893 0.005</point>
+      <point>250.807 334.558 0.005</point>
+      <point>250.994 334.222 0.005</point>
+      <point>251.178 333.885 0.005</point>
+      <point>251.357 333.547 0.005</point>
+      <point>251.533 333.209 0.005</point>
+      <point>251.705 332.87 0.005</point>
+      <point>251.874 332.531 0.005</point>
+      <point>252.039 332.19 0.005</point>
+      <point>252.2 331.85 0.005</point>
+      <point>252.358 331.509 0.005</point>
+      <point>252.513 331.167 0.005</point>
+      <point>252.663 330.825 0.005</point>
+      <point>252.84 330.415 0.005</point>
+      <point>253.012 330.004 0.005</point>
+      <point>253.179 329.593 0.005</point>
+      <point>253.341 329.181 0.005</point>
+      <point>253.499 328.77 0.005</point>
+      <point>253.652 328.358 0.005</point>
+      <point>253.8 327.947 0.005</point>
+      <point>253.944 327.536 0.005</point>
+      <point>254.084 327.125 0.005</point>
+      <point>254.219 326.715 0.005</point>
+      <point>254.35 326.305 0.005</point>
+      <point>254.477 325.896 0.005</point>
+      <point>254.62 325.419 0.005</point>
+      <point>254.758 324.943 0.005</point>
+      <point>254.89 324.469 0.005</point>
+      <point>255.016 323.995 0.005</point>
+      <point>255.138 323.524 0.005</point>
+      <point>255.255 323.054 0.005</point>
+      <point>255.366 322.585 0.005</point>
+      <point>255.473 322.119 0.005</point>
+      <point>255.589 321.588 0.005</point>
+      <point>255.699 321.061 0.005</point>
+      <point>255.804 320.536 0.005</point>
+      <point>255.902 320.015 0.005</point>
+      <point>255.995 319.497 0.005</point>
+      <point>256.083 318.983 0.005</point>
+      <point>256.176 318.41 0.005</point>
+      <point>256.262 317.842 0.005</point>
+      <point>256.341 317.279 0.005</point>
+      <point>256.415 316.723 0.005</point>
+      <point>256.491 316.112 0.005</point>
+      <point>256.56 315.509 0.005</point>
+      <point>256.622 314.915 0.005</point>
+      <point>256.683 314.271 0.005</point>
+      <point>256.738 313.639 0.005</point>
+      <point>256.79 312.963 0.005</point>
+      <point>256.835 312.303 0.005</point>
+      <point>256.876 311.604 0.005</point>
+      <point>256.912 310.874 0.005</point>
+      <point>256.942 310.118 0.005</point>
+      <point>256.966 309.343 0.005</point>
+      <point>256.984 308.512 0.005</point>
+      <point>256.997 307.559 0.005</point>
+      <point>257.001 306.23 0.005</point>
+      <point>257 305 0.005</point>
+    </road>
+    <road name="road_13">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>283 147 0.005</point>
+      <point>178 147 0.005</point>
+    </road>
+    <road name="road_14">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>162 147 0.005</point>
+      <point>161.192 147.004 0.005</point>
+      <point>160.388 147.016 0.005</point>
+      <point>159.589 147.036 0.005</point>
+      <point>158.793 147.064 0.005</point>
+      <point>158.002 147.1 0.005</point>
+      <point>157.215 147.144 0.005</point>
+      <point>156.432 147.196 0.005</point>
+      <point>155.653 147.255 0.005</point>
+      <point>154.878 147.322 0.005</point>
+      <point>154.106 147.397 0.005</point>
+      <point>153.339 147.479 0.005</point>
+      <point>152.576 147.569 0.005</point>
+      <point>151.817 147.667 0.005</point>
+      <point>151.061 147.772 0.005</point>
+      <point>150.31 147.884 0.005</point>
+      <point>149.562 148.004 0.005</point>
+      <point>148.818 148.131 0.005</point>
+      <point>148.078 148.265 0.005</point>
+      <point>147.341 148.406 0.005</point>
+      <point>146.609 148.555 0.005</point>
+      <point>145.88 148.711 0.005</point>
+      <point>145.154 148.874 0.005</point>
+      <point>144.433 149.044 0.005</point>
+      <point>143.715 149.221 0.005</point>
+      <point>143 149.405 0.005</point>
+      <point>142.29 149.595 0.005</point>
+      <point>141.582 149.793 0.005</point>
+      <point>140.879 149.997 0.005</point>
+      <point>140.178 150.208 0.005</point>
+      <point>139.482 150.426 0.005</point>
+      <point>138.788 150.651 0.005</point>
+      <point>138.099 150.882 0.005</point>
+      <point>137.412 151.119 0.005</point>
+      <point>136.729 151.363 0.005</point>
+      <point>136.049 151.614 0.005</point>
+      <point>135.373 151.871 0.005</point>
+      <point>134.7 152.134 0.005</point>
+      <point>134.03 152.404 0.005</point>
+      <point>133.363 152.68 0.005</point>
+      <point>132.7 152.962 0.005</point>
+      <point>132.04 153.25 0.005</point>
+      <point>131.383 153.544 0.005</point>
+      <point>130.729 153.844 0.005</point>
+      <point>130.078 154.151 0.005</point>
+      <point>129.431 154.463 0.005</point>
+      <point>128.786 154.781 0.005</point>
+      <point>128.145 155.105 0.005</point>
+      <point>127.506 155.435 0.005</point>
+      <point>126.871 155.771 0.005</point>
+      <point>126.238 156.113 0.005</point>
+      <point>125.609 156.46 0.005</point>
+      <point>124.982 156.812 0.005</point>
+      <point>124.151 157.291 0.005</point>
+      <point>123.326 157.78 0.005</point>
+      <point>122.505 158.278 0.005</point>
+      <point>121.689 158.786 0.005</point>
+      <point>120.878 159.304 0.005</point>
+      <point>120.072 159.83 0.005</point>
+      <point>119.271 160.366 0.005</point>
+      <point>118.474 160.911 0.005</point>
+      <point>117.682 161.465 0.005</point>
+      <point>116.895 162.028 0.005</point>
+      <point>116.112 162.6 0.005</point>
+      <point>115.334 163.18 0.005</point>
+      <point>114.56 163.769 0.005</point>
+      <point>113.791 164.366 0.005</point>
+      <point>113.025 164.972 0.005</point>
+      <point>112.265 165.586 0.005</point>
+      <point>111.508 166.207 0.005</point>
+      <point>110.755 166.837 0.005</point>
+      <point>109.82 167.635 0.005</point>
+      <point>108.892 168.445 0.005</point>
+      <point>107.969 169.267 0.005</point>
+      <point>107.052 170.101 0.005</point>
+      <point>106.142 170.946 0.005</point>
+      <point>105.237 171.802 0.005</point>
+      <point>104.338 172.669 0.005</point>
+      <point>103.444 173.546 0.005</point>
+      <point>102.556 174.434 0.005</point>
+      <point>101.497 175.513 0.005</point>
+      <point>100.445 176.607 0.005</point>
+      <point>99.4012 177.714 0.005</point>
+      <point>98.364 178.835 0.005</point>
+      <point>97.3337 179.969 0.005</point>
+      <point>96.14 181.308 0.005</point>
+      <point>94.955 182.664 0.005</point>
+      <point>93.7785 184.036 0.005</point>
+      <point>92.61 185.423 0.005</point>
+      <point>91.284 187.027 0.005</point>
+      <point>89.9677 188.649 0.005</point>
+      <point>88.4978 190.496 0.005</point>
+      <point>87.0388 192.363 0.005</point>
+      <point>85.4297 194.461 0.005</point>
+      <point>83.6731 196.794 0.005</point>
+      <point>81.7715 199.368 0.005</point>
+      <point>79.5703 202.404 0.005</point>
+      <point>76.9188 206.132 0.005</point>
+      <point>73.5154 211.01 0.005</point>
+      <point>55.0812 237.868 0.005</point>
+      <point>52.4297 241.596 0.005</point>
+      <point>50.2285 244.632 0.005</point>
+      <point>48.3269 247.206 0.005</point>
+      <point>46.5703 249.539 0.005</point>
+      <point>44.9612 251.637 0.005</point>
+      <point>43.5022 253.504 0.005</point>
+      <point>42.0323 255.351 0.005</point>
+      <point>40.716 256.973 0.005</point>
+      <point>39.39 258.577 0.005</point>
+      <point>38.2215 259.964 0.005</point>
+      <point>37.045 261.336 0.005</point>
+      <point>35.86 262.692 0.005</point>
+      <point>34.6663 264.031 0.005</point>
+      <point>33.636 265.165 0.005</point>
+      <point>32.5988 266.286 0.005</point>
+      <point>31.5546 267.393 0.005</point>
+      <point>30.5032 268.487 0.005</point>
+      <point>29.4443 269.566 0.005</point>
+      <point>28.556 270.454 0.005</point>
+      <point>27.6623 271.331 0.005</point>
+      <point>26.7631 272.198 0.005</point>
+      <point>25.8582 273.054 0.005</point>
+      <point>24.9475 273.899 0.005</point>
+      <point>24.031 274.733 0.005</point>
+      <point>23.1084 275.555 0.005</point>
+      <point>22.1797 276.365 0.005</point>
+      <point>21.2447 277.163 0.005</point>
+      <point>20.4922 277.793 0.005</point>
+      <point>19.7355 278.414 0.005</point>
+      <point>18.9746 279.028 0.005</point>
+      <point>18.2095 279.634 0.005</point>
+      <point>17.4401 280.231 0.005</point>
+      <point>16.6662 280.82 0.005</point>
+      <point>15.888 281.4 0.005</point>
+      <point>15.1053 281.972 0.005</point>
+      <point>14.318 282.535 0.005</point>
+      <point>13.5261 283.089 0.005</point>
+      <point>12.7295 283.634 0.005</point>
+      <point>11.9282 284.17 0.005</point>
+      <point>11.1221 284.696 0.005</point>
+      <point>10.3111 285.214 0.005</point>
+      <point>9.49528 285.722 0.005</point>
+      <point>8.67444 286.22 0.005</point>
+      <point>7.84858 286.709 0.005</point>
+      <point>7.01762 287.188 0.005</point>
+      <point>6.39102 287.54 0.005</point>
+      <point>5.7615 287.888 0.005</point>
+      <point>5.12903 288.229 0.005</point>
+      <point>4.49359 288.565 0.005</point>
+      <point>3.85515 288.895 0.005</point>
+      <point>3.21368 289.219 0.005</point>
+      <point>2.56917 289.537 0.005</point>
+      <point>1.92158 289.849 0.005</point>
+      <point>1.27089 290.156 0.005</point>
+      <point>0.617075 290.456 0.005</point>
+      <point>-0.0398907 290.75 0.005</point>
+      <point>-0.700032 291.038 0.005</point>
+      <point>-1.36337 291.32 0.005</point>
+      <point>-2.02994 291.596 0.005</point>
+      <point>-2.69976 291.866 0.005</point>
+      <point>-3.37286 292.129 0.005</point>
+      <point>-4.04926 292.386 0.005</point>
+      <point>-4.72899 292.637 0.005</point>
+      <point>-5.41207 292.881 0.005</point>
+      <point>-6.09853 293.118 0.005</point>
+      <point>-6.78839 293.349 0.005</point>
+      <point>-7.48168 293.574 0.005</point>
+      <point>-8.17842 293.792 0.005</point>
+      <point>-8.87864 294.003 0.005</point>
+      <point>-9.58237 294.207 0.005</point>
+      <point>-10.2896 294.405 0.005</point>
+      <point>-11.0004 294.595 0.005</point>
+      <point>-11.7148 294.779 0.005</point>
+      <point>-12.4328 294.956 0.005</point>
+      <point>-13.1545 295.126 0.005</point>
+      <point>-13.8797 295.289 0.005</point>
+      <point>-14.6087 295.445 0.005</point>
+      <point>-15.3414 295.594 0.005</point>
+      <point>-16.0778 295.735 0.005</point>
+      <point>-16.8179 295.869 0.005</point>
+      <point>-17.5619 295.996 0.005</point>
+      <point>-18.3096 296.116 0.005</point>
+      <point>-19.0612 296.228 0.005</point>
+      <point>-19.8167 296.333 0.005</point>
+      <point>-20.576 296.431 0.005</point>
+      <point>-21.3392 296.521 0.005</point>
+      <point>-22.1064 296.603 0.005</point>
+      <point>-22.8775 296.678 0.005</point>
+      <point>-23.6526 296.745 0.005</point>
+      <point>-24.4317 296.804 0.005</point>
+      <point>-25.2149 296.856 0.005</point>
+      <point>-26.0021 296.9 0.005</point>
+      <point>-26.7934 296.936 0.005</point>
+      <point>-27.5888 296.964 0.005</point>
+      <point>-28.3884 296.984 0.005</point>
+      <point>-29.1921 296.996 0.005</point>
+      <point>-30 297 0.005</point>
+    </road>
+    <road name="road_15">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>364 -32 0.005</point>
+      <point>368.956 -31.978 0.005</point>
+      <point>373.296 -31.9197 0.005</point>
+      <point>377.283 -31.8302 0.005</point>
+      <point>380.94 -31.7144 0.005</point>
+      <point>384.08 -31.5867 0.005</point>
+      <point>387.139 -31.4346 0.005</point>
+      <point>389.922 -31.2704 0.005</point>
+      <point>392.445 -31.0984 0.005</point>
+      <point>394.722 -30.9228 0.005</point>
+      <point>396.95 -30.7308 0.005</point>
+      <point>398.949 -30.5403 0.005</point>
+      <point>400.907 -30.3358 0.005</point>
+      <point>402.653 -30.1375 0.005</point>
+      <point>404.365 -29.9274 0.005</point>
+      <point>406.045 -29.7055 0.005</point>
+      <point>407.529 -29.4954 0.005</point>
+      <point>408.987 -29.2755 0.005</point>
+      <point>410.42 -29.0457 0.005</point>
+      <point>411.671 -28.8331 0.005</point>
+      <point>412.903 -28.6126 0.005</point>
+      <point>414.114 -28.3841 0.005</point>
+      <point>415.306 -28.1476 0.005</point>
+      <point>416.478 -27.903 0.005</point>
+      <point>417.488 -27.6823 0.005</point>
+      <point>418.483 -27.4554 0.005</point>
+      <point>419.463 -27.2221 0.005</point>
+      <point>420.428 -26.9825 0.005</point>
+      <point>421.379 -26.7366 0.005</point>
+      <point>422.182 -26.5207 0.005</point>
+      <point>422.975 -26.3001 0.005</point>
+      <point>423.758 -26.0747 0.005</point>
+      <point>424.53 -25.8446 0.005</point>
+      <point>425.291 -25.6096 0.005</point>
+      <point>426.043 -25.3699 0.005</point>
+      <point>426.784 -25.1253 0.005</point>
+      <point>427.515 -24.8759 0.005</point>
+      <point>428.236 -24.6216 0.005</point>
+      <point>428.829 -24.4059 0.005</point>
+      <point>429.415 -24.1868 0.005</point>
+      <point>429.994 -23.9643 0.005</point>
+      <point>430.566 -23.7383 0.005</point>
+      <point>431.132 -23.5089 0.005</point>
+      <point>431.691 -23.276 0.005</point>
+      <point>432.242 -23.0397 0.005</point>
+      <point>432.788 -22.7998 0.005</point>
+      <point>433.326 -22.5565 0.005</point>
+      <point>433.858 -22.3096 0.005</point>
+      <point>434.383 -22.0592 0.005</point>
+      <point>434.902 -21.8053 0.005</point>
+      <point>435.414 -21.5478 0.005</point>
+      <point>435.919 -21.2867 0.005</point>
+      <point>436.319 -21.0753 0.005</point>
+      <point>436.715 -20.8615 0.005</point>
+      <point>437.107 -20.6455 0.005</point>
+      <point>437.494 -20.4271 0.005</point>
+      <point>437.877 -20.2065 0.005</point>
+      <point>438.257 -19.9835 0.005</point>
+      <point>438.632 -19.7581 0.005</point>
+      <point>439.003 -19.5305 0.005</point>
+      <point>439.371 -19.3005 0.005</point>
+      <point>439.734 -19.0681 0.005</point>
+      <point>440.093 -18.8334 0.005</point>
+      <point>440.449 -18.5963 0.005</point>
+      <point>440.8 -18.3568 0.005</point>
+      <point>441.148 -18.115 0.005</point>
+      <point>441.492 -17.8708 0.005</point>
+      <point>441.832 -17.6242 0.005</point>
+      <point>442.168 -17.3752 0.005</point>
+      <point>442.5 -17.1238 0.005</point>
+      <point>442.828 -16.87 0.005</point>
+      <point>443.153 -16.6138 0.005</point>
+      <point>443.473 -16.3551 0.005</point>
+      <point>443.79 -16.094 0.005</point>
+      <point>444.104 -15.8305 0.005</point>
+      <point>444.413 -15.5645 0.005</point>
+      <point>444.719 -15.2961 0.005</point>
+      <point>445.021 -15.0253 0.005</point>
+      <point>445.32 -14.7519 0.005</point>
+      <point>445.615 -14.4761 0.005</point>
+      <point>445.906 -14.1979 0.005</point>
+      <point>446.194 -13.9171 0.005</point>
+      <point>446.478 -13.6339 0.005</point>
+      <point>446.758 -13.3481 0.005</point>
+      <point>447.035 -13.0599 0.005</point>
+      <point>447.308 -12.7692 0.005</point>
+      <point>447.578 -12.4759 0.005</point>
+      <point>447.845 -12.1801 0.005</point>
+      <point>448.108 -11.8818 0.005</point>
+      <point>448.367 -11.581 0.005</point>
+      <point>448.623 -11.2776 0.005</point>
+      <point>448.876 -10.9717 0.005</point>
+      <point>449.125 -10.6632 0.005</point>
+      <point>449.37 -10.3522 0.005</point>
+      <point>449.613 -10.0386 0.005</point>
+      <point>449.852 -9.72237 0.005</point>
+      <point>450.088 -9.40361 0.005</point>
+      <point>450.32 -9.08227 0.005</point>
+      <point>450.549 -8.75833 0.005</point>
+      <point>450.775 -8.43179 0.005</point>
+      <point>450.997 -8.10265 0.005</point>
+      <point>451.217 -7.7709 0.005</point>
+      <point>451.433 -7.43652 0.005</point>
+      <point>451.646 -7.09952 0.005</point>
+      <point>451.855 -6.75989 0.005</point>
+      <point>452.062 -6.41762 0.005</point>
+      <point>452.265 -6.07271 0.005</point>
+      <point>452.466 -5.72515 0.005</point>
+      <point>452.663 -5.37492 0.005</point>
+      <point>452.857 -5.02204 0.005</point>
+      <point>453.048 -4.66648 0.005</point>
+      <point>453.236 -4.30824 0.005</point>
+      <point>453.421 -3.94732 0.005</point>
+      <point>453.602 -3.58371 0.005</point>
+      <point>453.781 -3.21741 0.005</point>
+      <point>453.957 -2.8484 0.005</point>
+      <point>454.13 -2.47668 0.005</point>
+      <point>454.3 -2.10224 0.005</point>
+      <point>454.467 -1.72508 0.005</point>
+      <point>454.631 -1.34519 0.005</point>
+      <point>454.793 -0.962563 0.005</point>
+      <point>454.951 -0.577194 0.005</point>
+      <point>455.106 -0.189076 0.005</point>
+      <point>455.297 0.299948 0.005</point>
+      <point>455.483 0.79329 0.005</point>
+      <point>455.664 1.29096 0.005</point>
+      <point>455.842 1.79298 0.005</point>
+      <point>456.015 2.29936 0.005</point>
+      <point>456.184 2.8101 0.005</point>
+      <point>456.348 3.32523 0.005</point>
+      <point>456.509 3.84475 0.005</point>
+      <point>456.665 4.36868 0.005</point>
+      <point>456.817 4.89703 0.005</point>
+      <point>456.965 5.42981 0.005</point>
+      <point>457.109 5.96704 0.005</point>
+      <point>457.249 6.50873 0.005</point>
+      <point>457.412 7.16466 0.005</point>
+      <point>457.569 7.82706 0.005</point>
+      <point>457.721 8.49593 0.005</point>
+      <point>457.867 9.17131 0.005</point>
+      <point>458.008 9.85322 0.005</point>
+      <point>458.143 10.5417 0.005</point>
+      <point>458.273 11.2367 0.005</point>
+      <point>458.397 11.9383 0.005</point>
+      <point>458.536 12.7652 0.005</point>
+      <point>458.668 13.6012 0.005</point>
+      <point>458.793 14.4462 0.005</point>
+      <point>458.911 15.3004 0.005</point>
+      <point>459.023 16.1637 0.005</point>
+      <point>459.142 17.1615 0.005</point>
+      <point>459.253 18.1714 0.005</point>
+      <point>459.355 19.1934 0.005</point>
+      <point>459.45 20.2276 0.005</point>
+      <point>459.546 21.4056 0.005</point>
+      <point>459.633 22.5991 0.005</point>
+      <point>459.71 23.8081 0.005</point>
+      <point>459.784 25.1699 0.005</point>
+      <point>459.847 26.5512 0.005</point>
+      <point>459.903 28.0931 0.005</point>
+      <point>459.949 29.8024 0.005</point>
+      <point>459.98 31.5401 0.005</point>
+      <point>459.998 33.4549 0.005</point>
+      <point>460 34.5 0.005</point>
+    </road>
+    <road name="road_16">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>460 267 0.005</point>
+      <point>460 34.5 0.005</point>
+    </road>
+    <road name="road_17">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>468 275 0.005</point>
+      <point>471.207 274.985 0.005</point>
+      <point>474.347 274.942 0.005</point>
+      <point>477.421 274.87 0.005</point>
+      <point>480.1 274.783 0.005</point>
+      <point>482.727 274.674 0.005</point>
+      <point>485.304 274.542 0.005</point>
+      <point>487.831 274.39 0.005</point>
+      <point>490.308 274.216 0.005</point>
+      <point>492.436 274.047 0.005</point>
+      <point>494.527 273.862 0.005</point>
+      <point>496.58 273.661 0.005</point>
+      <point>498.597 273.444 0.005</point>
+      <point>500.578 273.212 0.005</point>
+      <point>502.523 272.965 0.005</point>
+      <point>504.162 272.741 0.005</point>
+      <point>505.775 272.506 0.005</point>
+      <point>507.362 272.261 0.005</point>
+      <point>508.924 272.004 0.005</point>
+      <point>510.46 271.737 0.005</point>
+      <point>511.971 271.459 0.005</point>
+      <point>513.457 271.171 0.005</point>
+      <point>514.919 270.873 0.005</point>
+      <point>516.356 270.564 0.005</point>
+      <point>517.769 270.245 0.005</point>
+      <point>518.928 269.972 0.005</point>
+      <point>520.07 269.691 0.005</point>
+      <point>521.195 269.404 0.005</point>
+      <point>522.305 269.11 0.005</point>
+      <point>523.398 268.81 0.005</point>
+      <point>524.475 268.502 0.005</point>
+      <point>525.535 268.188 0.005</point>
+      <point>526.58 267.868 0.005</point>
+      <point>527.609 267.541 0.005</point>
+      <point>528.623 267.207 0.005</point>
+      <point>529.62 266.867 0.005</point>
+      <point>530.603 266.521 0.005</point>
+      <point>531.57 266.169 0.005</point>
+      <point>532.332 265.883 0.005</point>
+      <point>533.085 265.592 0.005</point>
+      <point>533.829 265.298 0.005</point>
+      <point>534.562 265 0.005</point>
+      <point>535.287 264.698 0.005</point>
+      <point>536.002 264.392 0.005</point>
+      <point>536.707 264.083 0.005</point>
+      <point>537.403 263.77 0.005</point>
+      <point>538.09 263.453 0.005</point>
+      <point>538.768 263.132 0.005</point>
+      <point>539.436 262.808 0.005</point>
+      <point>540.095 262.48 0.005</point>
+      <point>540.746 262.148 0.005</point>
+      <point>541.387 261.813 0.005</point>
+      <point>542.02 261.474 0.005</point>
+      <point>542.643 261.132 0.005</point>
+      <point>543.258 260.787 0.005</point>
+      <point>543.865 260.438 0.005</point>
+      <point>544.462 260.085 0.005</point>
+      <point>545.051 259.729 0.005</point>
+      <point>545.631 259.37 0.005</point>
+      <point>546.203 259.008 0.005</point>
+      <point>546.767 258.642 0.005</point>
+      <point>547.322 258.273 0.005</point>
+      <point>547.868 257.901 0.005</point>
+      <point>548.407 257.525 0.005</point>
+      <point>548.937 257.147 0.005</point>
+      <point>549.459 256.765 0.005</point>
+      <point>549.973 256.38 0.005</point>
+      <point>550.48 255.992 0.005</point>
+      <point>550.978 255.601 0.005</point>
+      <point>551.468 255.207 0.005</point>
+      <point>551.951 254.81 0.005</point>
+      <point>552.307 254.51 0.005</point>
+      <point>552.66 254.209 0.005</point>
+      <point>553.008 253.906 0.005</point>
+      <point>553.352 253.602 0.005</point>
+      <point>553.691 253.296 0.005</point>
+      <point>554.026 252.988 0.005</point>
+      <point>554.357 252.678 0.005</point>
+      <point>554.684 252.368 0.005</point>
+      <point>555.007 252.055 0.005</point>
+      <point>555.326 251.741 0.005</point>
+      <point>555.64 251.426 0.005</point>
+      <point>555.95 251.108 0.005</point>
+      <point>556.257 250.79 0.005</point>
+      <point>556.559 250.47 0.005</point>
+      <point>556.857 250.148 0.005</point>
+      <point>557.151 249.825 0.005</point>
+      <point>557.442 249.501 0.005</point>
+      <point>557.728 249.175 0.005</point>
+      <point>558.011 248.848 0.005</point>
+      <point>558.289 248.519 0.005</point>
+      <point>558.564 248.189 0.005</point>
+      <point>558.835 247.857 0.005</point>
+      <point>559.102 247.525 0.005</point>
+      <point>559.365 247.19 0.005</point>
+      <point>559.624 246.855 0.005</point>
+      <point>559.88 246.518 0.005</point>
+      <point>560.132 246.18 0.005</point>
+      <point>560.38 245.84 0.005</point>
+      <point>560.625 245.499 0.005</point>
+      <point>560.866 245.157 0.005</point>
+      <point>561.104 244.814 0.005</point>
+      <point>561.338 244.469 0.005</point>
+      <point>561.568 244.123 0.005</point>
+      <point>561.795 243.776 0.005</point>
+      <point>562.091 243.311 0.005</point>
+      <point>562.382 242.844 0.005</point>
+      <point>562.667 242.375 0.005</point>
+      <point>562.945 241.904 0.005</point>
+      <point>563.218 241.431 0.005</point>
+      <point>563.484 240.956 0.005</point>
+      <point>563.745 240.479 0.005</point>
+      <point>564 240 0.005</point>
+      <point>564.249 239.519 0.005</point>
+      <point>564.493 239.036 0.005</point>
+      <point>564.73 238.551 0.005</point>
+      <point>564.963 238.065 0.005</point>
+      <point>565.189 237.577 0.005</point>
+      <point>565.41 237.087 0.005</point>
+      <point>565.626 236.595 0.005</point>
+      <point>565.837 236.101 0.005</point>
+      <point>566.042 235.606 0.005</point>
+      <point>566.242 235.109 0.005</point>
+      <point>566.437 234.611 0.005</point>
+      <point>566.627 234.111 0.005</point>
+      <point>566.811 233.609 0.005</point>
+      <point>566.991 233.106 0.005</point>
+      <point>567.166 232.601 0.005</point>
+      <point>567.336 232.095 0.005</point>
+      <point>567.501 231.588 0.005</point>
+      <point>567.661 231.079 0.005</point>
+      <point>567.817 230.569 0.005</point>
+      <point>567.968 230.057 0.005</point>
+      <point>568.114 229.544 0.005</point>
+      <point>568.291 228.901 0.005</point>
+      <point>568.461 228.256 0.005</point>
+      <point>568.624 227.61 0.005</point>
+      <point>568.781 226.961 0.005</point>
+      <point>568.93 226.311 0.005</point>
+      <point>569.074 225.659 0.005</point>
+      <point>569.211 225.005 0.005</point>
+      <point>569.342 224.35 0.005</point>
+      <point>569.467 223.693 0.005</point>
+      <point>569.585 223.035 0.005</point>
+      <point>569.698 222.376 0.005</point>
+      <point>569.826 221.582 0.005</point>
+      <point>569.946 220.787 0.005</point>
+      <point>570.058 219.991 0.005</point>
+      <point>570.162 219.192 0.005</point>
+      <point>570.259 218.392 0.005</point>
+      <point>570.349 217.591 0.005</point>
+      <point>570.431 216.789 0.005</point>
+      <point>570.519 215.851 0.005</point>
+      <point>570.597 214.912 0.005</point>
+      <point>570.667 213.971 0.005</point>
+      <point>570.729 213.029 0.005</point>
+      <point>570.789 211.952 0.005</point>
+      <point>570.839 210.874 0.005</point>
+      <point>570.885 209.66 0.005</point>
+      <point>570.919 208.445 0.005</point>
+      <point>570.944 207.095 0.005</point>
+      <point>570.956 205.745 0.005</point>
+      <point>570.957 204.261 0.005</point>
+      <point>570.944 202.644 0.005</point>
+      <point>570.912 200.76 0.005</point>
+      <point>570.852 198.479 0.005</point>
+      <point>570.749 195.541 0.005</point>
+      <point>570.087 180.265 0.005</point>
+      <point>570.036 178.282 0.005</point>
+      <point>570.01 176.692 0.005</point>
+      <point>570 175.361 0.005</point>
+      <point>570 175 0.005</point>
+    </road>
+    <road name="road_18">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>452 275 0.005</point>
+      <point>450.928 274.995 0.005</point>
+      <point>449.989 274.982 0.005</point>
+      <point>449.063 274.961 0.005</point>
+      <point>448.15 274.931 0.005</point>
+      <point>447.361 274.898 0.005</point>
+      <point>446.582 274.858 0.005</point>
+      <point>445.813 274.811 0.005</point>
+      <point>445.161 274.765 0.005</point>
+      <point>444.516 274.713 0.005</point>
+      <point>443.878 274.655 0.005</point>
+      <point>443.247 274.592 0.005</point>
+      <point>442.727 274.535 0.005</point>
+      <point>442.211 274.474 0.005</point>
+      <point>441.7 274.409 0.005</point>
+      <point>441.193 274.339 0.005</point>
+      <point>440.692 274.265 0.005</point>
+      <point>440.194 274.187 0.005</point>
+      <point>439.702 274.104 0.005</point>
+      <point>439.214 274.017 0.005</point>
+      <point>438.827 273.944 0.005</point>
+      <point>438.443 273.867 0.005</point>
+      <point>438.062 273.788 0.005</point>
+      <point>437.684 273.706 0.005</point>
+      <point>437.309 273.621 0.005</point>
+      <point>436.937 273.532 0.005</point>
+      <point>436.567 273.441 0.005</point>
+      <point>436.2 273.346 0.005</point>
+      <point>435.837 273.248 0.005</point>
+      <point>435.476 273.147 0.005</point>
+      <point>435.118 273.043 0.005</point>
+      <point>434.763 272.935 0.005</point>
+      <point>434.41 272.824 0.005</point>
+      <point>434.061 272.709 0.005</point>
+      <point>433.714 272.591 0.005</point>
+      <point>433.37 272.47 0.005</point>
+      <point>433.114 272.377 0.005</point>
+      <point>432.859 272.281 0.005</point>
+      <point>432.606 272.184 0.005</point>
+      <point>432.354 272.085 0.005</point>
+      <point>432.104 271.983 0.005</point>
+      <point>431.856 271.88 0.005</point>
+      <point>431.609 271.775 0.005</point>
+      <point>431.364 271.667 0.005</point>
+      <point>431.12 271.558 0.005</point>
+      <point>430.878 271.446 0.005</point>
+      <point>430.637 271.332 0.005</point>
+      <point>430.397 271.216 0.005</point>
+      <point>430.16 271.098 0.005</point>
+      <point>429.923 270.978 0.005</point>
+      <point>429.688 270.856 0.005</point>
+      <point>429.455 270.731 0.005</point>
+      <point>429.223 270.604 0.005</point>
+      <point>428.993 270.475 0.005</point>
+      <point>428.764 270.344 0.005</point>
+      <point>428.537 270.211 0.005</point>
+      <point>428.311 270.075 0.005</point>
+      <point>428.086 269.937 0.005</point>
+      <point>427.863 269.797 0.005</point>
+      <point>427.642 269.654 0.005</point>
+      <point>427.422 269.509 0.005</point>
+      <point>427.203 269.362 0.005</point>
+      <point>426.986 269.213 0.005</point>
+      <point>426.77 269.061 0.005</point>
+      <point>426.556 268.906 0.005</point>
+      <point>426.343 268.75 0.005</point>
+      <point>426.131 268.591 0.005</point>
+      <point>425.921 268.429 0.005</point>
+      <point>425.713 268.265 0.005</point>
+      <point>425.506 268.099 0.005</point>
+      <point>425.3 267.93 0.005</point>
+      <point>425.095 267.759 0.005</point>
+      <point>424.892 267.585 0.005</point>
+      <point>424.691 267.409 0.005</point>
+      <point>424.49 267.23 0.005</point>
+      <point>424.292 267.049 0.005</point>
+      <point>424.094 266.865 0.005</point>
+      <point>423.898 266.679 0.005</point>
+      <point>423.703 266.49 0.005</point>
+      <point>423.51 266.298 0.005</point>
+      <point>423.318 266.104 0.005</point>
+      <point>423.127 265.907 0.005</point>
+      <point>422.938 265.707 0.005</point>
+      <point>422.75 265.505 0.005</point>
+      <point>422.563 265.301 0.005</point>
+      <point>422.378 265.093 0.005</point>
+      <point>422.194 264.883 0.005</point>
+      <point>422.012 264.67 0.005</point>
+      <point>421.83 264.454 0.005</point>
+      <point>421.65 264.236 0.005</point>
+      <point>421.472 264.015 0.005</point>
+      <point>421.294 263.791 0.005</point>
+      <point>421.118 263.565 0.005</point>
+      <point>420.944 263.335 0.005</point>
+      <point>420.77 263.103 0.005</point>
+      <point>420.598 262.868 0.005</point>
+      <point>420.427 262.63 0.005</point>
+      <point>420.258 262.389 0.005</point>
+      <point>420.09 262.146 0.005</point>
+      <point>419.923 261.899 0.005</point>
+      <point>419.757 261.65 0.005</point>
+      <point>419.592 261.398 0.005</point>
+      <point>419.375 261.057 0.005</point>
+      <point>419.16 260.71 0.005</point>
+      <point>418.947 260.359 0.005</point>
+      <point>418.736 260.002 0.005</point>
+      <point>418.528 259.64 0.005</point>
+      <point>418.322 259.273 0.005</point>
+      <point>418.118 258.9 0.005</point>
+      <point>417.916 258.521 0.005</point>
+      <point>417.716 258.137 0.005</point>
+      <point>417.518 257.748 0.005</point>
+      <point>417.323 257.353 0.005</point>
+      <point>417.129 256.953 0.005</point>
+      <point>416.938 256.547 0.005</point>
+      <point>416.749 256.135 0.005</point>
+      <point>416.562 255.717 0.005</point>
+      <point>416.377 255.294 0.005</point>
+      <point>416.194 254.865 0.005</point>
+      <point>416.013 254.431 0.005</point>
+      <point>415.79 253.879 0.005</point>
+      <point>415.57 253.318 0.005</point>
+      <point>415.353 252.748 0.005</point>
+      <point>415.14 252.169 0.005</point>
+      <point>414.929 251.58 0.005</point>
+      <point>414.722 250.982 0.005</point>
+      <point>414.517 250.375 0.005</point>
+      <point>414.316 249.758 0.005</point>
+      <point>414.118 249.131 0.005</point>
+      <point>413.884 248.366 0.005</point>
+      <point>413.654 247.587 0.005</point>
+      <point>413.428 246.793 0.005</point>
+      <point>413.207 245.986 0.005</point>
+      <point>412.99 245.164 0.005</point>
+      <point>412.777 244.327 0.005</point>
+      <point>412.534 243.332 0.005</point>
+      <point>412.297 242.317 0.005</point>
+      <point>412.065 241.282 0.005</point>
+      <point>411.838 240.226 0.005</point>
+      <point>411.585 238.995 0.005</point>
+      <point>411.34 237.735 0.005</point>
+      <point>411.101 236.448 0.005</point>
+      <point>410.841 234.967 0.005</point>
+      <point>410.589 233.45 0.005</point>
+      <point>410.345 231.897 0.005</point>
+      <point>410.084 230.129 0.005</point>
+      <point>409.833 228.315 0.005</point>
+      <point>409.568 226.267 0.005</point>
+      <point>409.292 223.967 0.005</point>
+      <point>409.03 221.6 0.005</point>
+      <point>408.761 218.957 0.005</point>
+      <point>408.488 216.019 0.005</point>
+      <point>408.214 212.763 0.005</point>
+      <point>407.927 208.936 0.005</point>
+      <point>407.649 204.723 0.005</point>
+      <point>407.371 199.843 0.005</point>
+      <point>407.087 193.968 0.005</point>
+      <point>406.813 186.979 0.005</point>
+      <point>406.544 178.151 0.005</point>
+      <point>406.297 166.573 0.005</point>
+      <point>406.095 150.368 0.005</point>
+      <point>406 125 0.005</point>
+    </road>
+    <road name="road_19">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>356 155 0.005</point>
+      <point>356 363 0.005</point>
+    </road>
+    <road name="road_20">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>356 363 0.005</point>
+      <point>355.993 364.432 0.005</point>
+      <point>355.971 365.848 0.005</point>
+      <point>355.942 367.015 0.005</point>
+      <point>355.903 368.172 0.005</point>
+      <point>355.854 369.318 0.005</point>
+      <point>355.796 370.452 0.005</point>
+      <point>355.727 371.576 0.005</point>
+      <point>355.649 372.689 0.005</point>
+      <point>355.561 373.791 0.005</point>
+      <point>355.463 374.882 0.005</point>
+      <point>355.356 375.963 0.005</point>
+      <point>355.238 377.033 0.005</point>
+      <point>355.112 378.092 0.005</point>
+      <point>354.975 379.141 0.005</point>
+      <point>354.829 380.18 0.005</point>
+      <point>354.674 381.208 0.005</point>
+      <point>354.509 382.225 0.005</point>
+      <point>354.334 383.232 0.005</point>
+      <point>354.188 384.031 0.005</point>
+      <point>354.035 384.823 0.005</point>
+      <point>353.877 385.608 0.005</point>
+      <point>353.713 386.387 0.005</point>
+      <point>353.542 387.159 0.005</point>
+      <point>353.366 387.925 0.005</point>
+      <point>353.184 388.685 0.005</point>
+      <point>352.996 389.438 0.005</point>
+      <point>352.801 390.185 0.005</point>
+      <point>352.601 390.925 0.005</point>
+      <point>352.396 391.659 0.005</point>
+      <point>352.184 392.387 0.005</point>
+      <point>351.966 393.109 0.005</point>
+      <point>351.743 393.824 0.005</point>
+      <point>351.514 394.533 0.005</point>
+      <point>351.279 395.236 0.005</point>
+      <point>351.038 395.933 0.005</point>
+      <point>350.792 396.624 0.005</point>
+      <point>350.54 397.309 0.005</point>
+      <point>350.282 397.987 0.005</point>
+      <point>350.018 398.66 0.005</point>
+      <point>349.749 399.326 0.005</point>
+      <point>349.474 399.987 0.005</point>
+      <point>349.193 400.642 0.005</point>
+      <point>348.907 401.29 0.005</point>
+      <point>348.615 401.933 0.005</point>
+      <point>348.317 402.57 0.005</point>
+      <point>348.014 403.201 0.005</point>
+      <point>347.706 403.826 0.005</point>
+      <point>347.392 404.446 0.005</point>
+      <point>347.072 405.059 0.005</point>
+      <point>346.747 405.667 0.005</point>
+      <point>346.416 406.269 0.005</point>
+      <point>346.08 406.866 0.005</point>
+      <point>345.738 407.457 0.005</point>
+      <point>345.391 408.042 0.005</point>
+      <point>345.038 408.621 0.005</point>
+      <point>344.68 409.195 0.005</point>
+      <point>344.317 409.764 0.005</point>
+      <point>343.948 410.327 0.005</point>
+      <point>343.574 410.884 0.005</point>
+      <point>343.194 411.436 0.005</point>
+      <point>342.81 411.983 0.005</point>
+      <point>342.42 412.524 0.005</point>
+      <point>342.024 413.06 0.005</point>
+      <point>341.623 413.59 0.005</point>
+      <point>341.217 414.115 0.005</point>
+      <point>340.806 414.634 0.005</point>
+      <point>340.39 415.149 0.005</point>
+      <point>339.968 415.658 0.005</point>
+      <point>339.541 416.162 0.005</point>
+      <point>339.109 416.661 0.005</point>
+      <point>338.672 417.154 0.005</point>
+      <point>338.23 417.642 0.005</point>
+      <point>337.782 418.126 0.005</point>
+      <point>337.33 418.604 0.005</point>
+      <point>336.872 419.077 0.005</point>
+      <point>336.409 419.545 0.005</point>
+      <point>335.941 420.008 0.005</point>
+      <point>335.468 420.466 0.005</point>
+      <point>334.991 420.919 0.005</point>
+      <point>334.508 421.367 0.005</point>
+      <point>334.02 421.81 0.005</point>
+      <point>333.527 422.248 0.005</point>
+      <point>333.029 422.682 0.005</point>
+      <point>332.526 423.11 0.005</point>
+      <point>332.019 423.534 0.005</point>
+      <point>331.506 423.953 0.005</point>
+      <point>330.988 424.367 0.005</point>
+      <point>330.466 424.777 0.005</point>
+      <point>329.939 425.182 0.005</point>
+      <point>329.407 425.582 0.005</point>
+      <point>328.87 425.977 0.005</point>
+      <point>328.328 426.368 0.005</point>
+      <point>327.782 426.754 0.005</point>
+      <point>327.23 427.136 0.005</point>
+      <point>326.674 427.513 0.005</point>
+      <point>326.113 427.886 0.005</point>
+      <point>325.548 428.254 0.005</point>
+      <point>324.978 428.618 0.005</point>
+      <point>324.403 428.977 0.005</point>
+      <point>323.823 429.332 0.005</point>
+      <point>323.239 429.683 0.005</point>
+      <point>322.65 430.029 0.005</point>
+      <point>322.057 430.371 0.005</point>
+      <point>321.308 430.792 0.005</point>
+      <point>320.553 431.207 0.005</point>
+      <point>319.79 431.615 0.005</point>
+      <point>319.02 432.016 0.005</point>
+      <point>318.243 432.411 0.005</point>
+      <point>317.46 432.8 0.005</point>
+      <point>316.669 433.182 0.005</point>
+      <point>315.871 433.558 0.005</point>
+      <point>315.066 433.927 0.005</point>
+      <point>314.255 434.291 0.005</point>
+      <point>313.436 434.648 0.005</point>
+      <point>312.611 434.999 0.005</point>
+      <point>311.778 435.343 0.005</point>
+      <point>310.94 435.682 0.005</point>
+      <point>310.094 436.015 0.005</point>
+      <point>309.07 436.407 0.005</point>
+      <point>308.037 436.79 0.005</point>
+      <point>306.994 437.165 0.005</point>
+      <point>305.942 437.531 0.005</point>
+      <point>304.88 437.89 0.005</point>
+      <point>303.809 438.24 0.005</point>
+      <point>302.729 438.582 0.005</point>
+      <point>301.639 438.916 0.005</point>
+      <point>300.54 439.243 0.005</point>
+      <point>299.247 439.614 0.005</point>
+      <point>297.941 439.975 0.005</point>
+      <point>296.623 440.326 0.005</point>
+      <point>295.292 440.666 0.005</point>
+      <point>293.95 440.997 0.005</point>
+      <point>292.596 441.318 0.005</point>
+      <point>291.033 441.673 0.005</point>
+      <point>289.455 442.015 0.005</point>
+      <point>287.862 442.346 0.005</point>
+      <point>286.254 442.664 0.005</point>
+      <point>284.427 443.008 0.005</point>
+      <point>282.581 443.338 0.005</point>
+      <point>280.716 443.653 0.005</point>
+      <point>278.623 443.987 0.005</point>
+      <point>276.507 444.304 0.005</point>
+      <point>274.369 444.605 0.005</point>
+      <point>271.992 444.918 0.005</point>
+      <point>269.588 445.212 0.005</point>
+      <point>266.937 445.511 0.005</point>
+      <point>264.255 445.79 0.005</point>
+      <point>261.316 446.07 0.005</point>
+      <point>258.113 446.345 0.005</point>
+      <point>254.637 446.612 0.005</point>
+      <point>250.881 446.866 0.005</point>
+      <point>246.837 447.104 0.005</point>
+      <point>242.252 447.333 0.005</point>
+      <point>237.108 447.543 0.005</point>
+      <point>231.134 447.734 0.005</point>
+      <point>224.04 447.897 0.005</point>
+      <point>214.993 448.025 0.005</point>
+      <point>201.476 448.094 0.005</point>
+      <point>199.052 448.095 0.005</point>
+    </road>
+    <road name="road_21">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>199.052 448.095 0.005</point>
+      <point>198.214 448.091 0.005</point>
+      <point>197.382 448.077 0.005</point>
+      <point>196.555 448.055 0.005</point>
+      <point>195.733 448.024 0.005</point>
+      <point>194.916 447.985 0.005</point>
+      <point>194.104 447.937 0.005</point>
+      <point>193.297 447.88 0.005</point>
+      <point>192.496 447.815 0.005</point>
+      <point>191.7 447.742 0.005</point>
+      <point>190.909 447.66 0.005</point>
+      <point>190.123 447.57 0.005</point>
+      <point>189.343 447.472 0.005</point>
+      <point>188.568 447.366 0.005</point>
+      <point>187.798 447.252 0.005</point>
+      <point>187.033 447.13 0.005</point>
+      <point>186.274 447 0.005</point>
+      <point>185.52 446.862 0.005</point>
+      <point>184.772 446.717 0.005</point>
+      <point>184.029 446.564 0.005</point>
+      <point>183.291 446.403 0.005</point>
+      <point>182.559 446.235 0.005</point>
+      <point>181.832 446.059 0.005</point>
+      <point>181.111 445.876 0.005</point>
+      <point>180.395 445.686 0.005</point>
+      <point>179.684 445.488 0.005</point>
+      <point>178.98 445.284 0.005</point>
+      <point>178.28 445.072 0.005</point>
+      <point>177.586 444.853 0.005</point>
+      <point>176.898 444.628 0.005</point>
+      <point>176.215 444.395 0.005</point>
+      <point>175.538 444.156 0.005</point>
+      <point>174.867 443.91 0.005</point>
+      <point>174.201 443.657 0.005</point>
+      <point>173.541 443.398 0.005</point>
+      <point>172.886 443.132 0.005</point>
+      <point>172.237 442.86 0.005</point>
+      <point>171.594 442.581 0.005</point>
+      <point>170.957 442.296 0.005</point>
+      <point>170.325 442.005 0.005</point>
+      <point>169.699 441.708 0.005</point>
+      <point>169.079 441.405 0.005</point>
+      <point>168.464 441.095 0.005</point>
+      <point>167.856 440.78 0.005</point>
+      <point>167.253 440.459 0.005</point>
+      <point>166.656 440.132 0.005</point>
+      <point>166.064 439.799 0.005</point>
+      <point>165.479 439.461 0.005</point>
+      <point>164.9 439.117 0.005</point>
+      <point>164.326 438.768 0.005</point>
+      <point>163.758 438.413 0.005</point>
+      <point>163.197 438.053 0.005</point>
+      <point>162.641 437.688 0.005</point>
+      <point>162.091 437.317 0.005</point>
+      <point>161.547 436.941 0.005</point>
+      <point>161.01 436.56 0.005</point>
+      <point>160.478 436.174 0.005</point>
+      <point>159.952 435.783 0.005</point>
+      <point>159.432 435.388 0.005</point>
+      <point>158.919 434.987 0.005</point>
+      <point>158.411 434.582 0.005</point>
+      <point>157.91 434.172 0.005</point>
+      <point>157.414 433.758 0.005</point>
+      <point>156.925 433.339 0.005</point>
+      <point>156.442 432.916 0.005</point>
+      <point>155.965 432.488 0.005</point>
+      <point>155.494 432.056 0.005</point>
+      <point>155.03 431.62 0.005</point>
+      <point>154.571 431.179 0.005</point>
+      <point>154.119 430.735 0.005</point>
+      <point>153.673 430.286 0.005</point>
+      <point>153.234 429.834 0.005</point>
+      <point>152.801 429.378 0.005</point>
+      <point>152.374 428.918 0.005</point>
+      <point>151.953 428.454 0.005</point>
+      <point>151.539 427.986 0.005</point>
+      <point>151.131 427.516 0.005</point>
+      <point>150.729 427.041 0.005</point>
+      <point>150.334 426.563 0.005</point>
+      <point>149.945 426.082 0.005</point>
+      <point>149.563 425.597 0.005</point>
+      <point>149.187 425.11 0.005</point>
+      <point>148.817 424.619 0.005</point>
+      <point>148.454 424.125 0.005</point>
+      <point>148.098 423.628 0.005</point>
+      <point>147.748 423.128 0.005</point>
+      <point>147.404 422.625 0.005</point>
+      <point>147.067 422.119 0.005</point>
+      <point>146.737 421.611 0.005</point>
+      <point>146.413 421.1 0.005</point>
+      <point>146.096 420.587 0.005</point>
+      <point>145.785 420.071 0.005</point>
+      <point>145.481 419.552 0.005</point>
+      <point>145.184 419.031 0.005</point>
+      <point>144.893 418.508 0.005</point>
+      <point>144.609 417.983 0.005</point>
+      <point>144.332 417.455 0.005</point>
+      <point>144.061 416.926 0.005</point>
+      <point>143.797 416.394 0.005</point>
+      <point>143.604 415.994 0.005</point>
+      <point>143.414 415.593 0.005</point>
+      <point>143.228 415.191 0.005</point>
+      <point>143.046 414.788 0.005</point>
+      <point>142.868 414.384 0.005</point>
+      <point>142.693 413.98 0.005</point>
+      <point>142.523 413.574 0.005</point>
+      <point>142.356 413.167 0.005</point>
+      <point>142.193 412.76 0.005</point>
+      <point>142.034 412.351 0.005</point>
+      <point>141.879 411.942 0.005</point>
+      <point>141.727 411.532 0.005</point>
+      <point>141.58 411.122 0.005</point>
+      <point>141.436 410.71 0.005</point>
+      <point>141.297 410.298 0.005</point>
+      <point>141.161 409.886 0.005</point>
+      <point>141.029 409.473 0.005</point>
+      <point>140.901 409.059 0.005</point>
+      <point>140.777 408.645 0.005</point>
+      <point>140.657 408.23 0.005</point>
+      <point>140.541 407.814 0.005</point>
+      <point>140.429 407.399 0.005</point>
+      <point>140.321 406.983 0.005</point>
+      <point>140.216 406.566 0.005</point>
+      <point>140.116 406.149 0.005</point>
+      <point>140.02 405.732 0.005</point>
+      <point>139.927 405.314 0.005</point>
+      <point>139.839 404.896 0.005</point>
+      <point>139.754 404.478 0.005</point>
+      <point>139.674 404.06 0.005</point>
+      <point>139.598 403.642 0.005</point>
+      <point>139.525 403.223 0.005</point>
+      <point>139.457 402.804 0.005</point>
+      <point>139.392 402.385 0.005</point>
+      <point>139.332 401.966 0.005</point>
+      <point>139.276 401.548 0.005</point>
+      <point>139.224 401.129 0.005</point>
+      <point>139.176 400.71 0.005</point>
+      <point>139.131 400.291 0.005</point>
+      <point>139.091 399.872 0.005</point>
+      <point>139.056 399.453 0.005</point>
+      <point>139.024 399.035 0.005</point>
+      <point>138.996 398.617 0.005</point>
+      <point>138.972 398.199 0.005</point>
+      <point>138.953 397.781 0.005</point>
+      <point>138.937 397.363 0.005</point>
+      <point>138.926 396.946 0.005</point>
+      <point>138.919 396.529 0.005</point>
+      <point>138.916 396.112 0.005</point>
+      <point>138.917 395.696 0.005</point>
+      <point>138.922 395.281 0.005</point>
+      <point>138.931 394.865 0.005</point>
+      <point>138.945 394.45 0.005</point>
+      <point>138.963 394.036 0.005</point>
+      <point>138.985 393.622 0.005</point>
+      <point>139.011 393.209 0.005</point>
+      <point>139.041 392.797 0.005</point>
+      <point>139.076 392.385 0.005</point>
+      <point>139.114 391.973 0.005</point>
+      <point>139.157 391.563 0.005</point>
+      <point>139.204 391.153 0.005</point>
+      <point>139.256 390.744 0.005</point>
+      <point>139.311 390.335 0.005</point>
+      <point>139.371 389.928 0.005</point>
+      <point>139.435 389.521 0.005</point>
+      <point>139.504 389.115 0.005</point>
+      <point>139.576 388.711 0.005</point>
+      <point>139.653 388.307 0.005</point>
+      <point>139.734 387.904 0.005</point>
+      <point>139.82 387.502 0.005</point>
+      <point>139.909 387.101 0.005</point>
+      <point>140.003 386.701 0.005</point>
+      <point>140.102 386.302 0.005</point>
+      <point>140.205 385.904 0.005</point>
+      <point>140.311 385.508 0.005</point>
+      <point>140.423 385.112 0.005</point>
+      <point>140.538 384.718 0.005</point>
+      <point>140.658 384.325 0.005</point>
+      <point>140.783 383.933 0.005</point>
+      <point>140.912 383.543 0.005</point>
+      <point>141.045 383.154 0.005</point>
+      <point>141.182 382.766 0.005</point>
+      <point>141.324 382.38 0.005</point>
+      <point>141.47 381.995 0.005</point>
+      <point>141.621 381.611 0.005</point>
+      <point>141.776 381.23 0.005</point>
+      <point>141.935 380.849 0.005</point>
+      <point>142.099 380.47 0.005</point>
+      <point>142.267 380.093 0.005</point>
+      <point>142.44 379.717 0.005</point>
+      <point>142.617 379.343 0.005</point>
+      <point>142.798 378.97 0.005</point>
+      <point>142.984 378.6 0.005</point>
+      <point>143.175 378.231 0.005</point>
+      <point>143.37 377.863 0.005</point>
+      <point>143.569 377.498 0.005</point>
+      <point>143.773 377.134 0.005</point>
+      <point>143.981 376.772 0.005</point>
+      <point>144.194 376.412 0.005</point>
+      <point>144.412 376.054 0.005</point>
+      <point>144.633 375.698 0.005</point>
+      <point>144.86 375.344 0.005</point>
+      <point>145.091 374.991 0.005</point>
+      <point>145.326 374.641 0.005</point>
+      <point>145.566 374.293 0.005</point>
+      <point>145.811 373.947 0.005</point>
+      <point>146.06 373.603 0.005</point>
+      <point>146.313 373.261 0.005</point>
+      <point>146.571 372.921 0.005</point>
+      <point>146.834 372.584 0.005</point>
+      <point>147.101 372.249 0.005</point>
+      <point>147.373 371.916 0.005</point>
+      <point>147.65 371.585 0.005</point>
+      <point>147.931 371.257 0.005</point>
+      <point>148.217 370.931 0.005</point>
+      <point>148.507 370.607 0.005</point>
+      <point>148.802 370.286 0.005</point>
+      <point>149.101 369.967 0.005</point>
+      <point>149.406 369.651 0.005</point>
+      <point>149.715 369.337 0.005</point>
+      <point>150.028 369.026 0.005</point>
+      <point>150.346 368.717 0.005</point>
+      <point>150.669 368.411 0.005</point>
+      <point>150.996 368.108 0.005</point>
+      <point>151.329 367.807 0.005</point>
+      <point>151.666 367.509 0.005</point>
+      <point>152.007 367.213 0.005</point>
+      <point>152.353 366.921 0.005</point>
+      <point>152.704 366.631 0.005</point>
+      <point>153.06 366.344 0.005</point>
+      <point>153.42 366.06 0.005</point>
+      <point>153.785 365.778 0.005</point>
+      <point>154.155 365.5 0.005</point>
+      <point>154.53 365.224 0.005</point>
+      <point>154.909 364.951 0.005</point>
+      <point>155.293 364.682 0.005</point>
+      <point>155.682 364.415 0.005</point>
+      <point>156.076 364.152 0.005</point>
+      <point>156.474 363.891 0.005</point>
+      <point>156.878 363.634 0.005</point>
+      <point>157.286 363.38 0.005</point>
+      <point>157.698 363.129 0.005</point>
+      <point>158.116 362.881 0.005</point>
+      <point>158.538 362.636 0.005</point>
+      <point>158.966 362.395 0.005</point>
+      <point>159.398 362.157 0.005</point>
+      <point>159.835 361.922 0.005</point>
+      <point>160.276 361.69 0.005</point>
+      <point>160.723 361.462 0.005</point>
+      <point>161.174 361.238 0.005</point>
+      <point>161.631 361.016 0.005</point>
+      <point>162.092 360.799 0.005</point>
+      <point>162.558 360.584 0.005</point>
+      <point>163.029 360.374 0.005</point>
+      <point>163.505 360.167 0.005</point>
+      <point>163.986 359.963 0.005</point>
+      <point>164.471 359.763 0.005</point>
+      <point>164.962 359.567 0.005</point>
+      <point>165.457 359.374 0.005</point>
+      <point>165.958 359.185 0.005</point>
+      <point>166.463 359 0.005</point>
+      <point>166.973 358.819 0.005</point>
+      <point>167.489 358.641 0.005</point>
+      <point>168.009 358.467 0.005</point>
+      <point>168.534 358.298 0.005</point>
+      <point>169.064 358.132 0.005</point>
+      <point>169.599 357.969 0.005</point>
+      <point>170.14 357.811 0.005</point>
+      <point>170.685 357.657 0.005</point>
+      <point>171.235 357.507 0.005</point>
+      <point>171.79 357.361 0.005</point>
+      <point>172.35 357.219 0.005</point>
+      <point>172.915 357.081 0.005</point>
+      <point>173.485 356.947 0.005</point>
+      <point>174.061 356.818 0.005</point>
+      <point>174.835 356.651 0.005</point>
+      <point>175.619 356.492 0.005</point>
+      <point>176.412 356.341 0.005</point>
+      <point>177.214 356.198 0.005</point>
+      <point>178.025 356.062 0.005</point>
+      <point>178.844 355.934 0.005</point>
+      <point>179.673 355.814 0.005</point>
+      <point>180.511 355.702 0.005</point>
+      <point>181.359 355.598 0.005</point>
+      <point>182.215 355.502 0.005</point>
+      <point>183.08 355.414 0.005</point>
+      <point>183.955 355.334 0.005</point>
+      <point>184.838 355.263 0.005</point>
+      <point>185.731 355.2 0.005</point>
+      <point>186.633 355.145 0.005</point>
+      <point>187.545 355.1 0.005</point>
+      <point>188.465 355.062 0.005</point>
+      <point>189.395 355.034 0.005</point>
+      <point>190.334 355.014 0.005</point>
+      <point>191.283 355.003 0.005</point>
+      <point>192 355 0.005</point>
+    </road>
+    <road name="road_22">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>460 283 0.005</point>
+      <point>460 531 0.005</point>
+    </road>
+    <road name="road_23">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>460 531 0.005</point>
+      <point>459.997 531.629 0.005</point>
+      <point>459.988 532.254 0.005</point>
+      <point>459.974 532.877 0.005</point>
+      <point>459.953 533.496 0.005</point>
+      <point>459.927 534.113 0.005</point>
+      <point>459.895 534.726 0.005</point>
+      <point>459.857 535.337 0.005</point>
+      <point>459.814 535.944 0.005</point>
+      <point>459.764 536.548 0.005</point>
+      <point>459.709 537.15 0.005</point>
+      <point>459.649 537.748 0.005</point>
+      <point>459.583 538.342 0.005</point>
+      <point>459.511 538.934 0.005</point>
+      <point>459.433 539.522 0.005</point>
+      <point>459.35 540.108 0.005</point>
+      <point>459.261 540.69 0.005</point>
+      <point>459.181 541.186 0.005</point>
+      <point>459.097 541.68 0.005</point>
+      <point>459.008 542.171 0.005</point>
+      <point>458.915 542.66 0.005</point>
+      <point>458.819 543.146 0.005</point>
+      <point>458.718 543.63 0.005</point>
+      <point>458.614 544.112 0.005</point>
+      <point>458.505 544.591 0.005</point>
+      <point>458.392 545.068 0.005</point>
+      <point>458.276 545.542 0.005</point>
+      <point>458.155 546.013 0.005</point>
+      <point>458.031 546.482 0.005</point>
+      <point>457.903 546.948 0.005</point>
+      <point>457.77 547.412 0.005</point>
+      <point>457.634 547.873 0.005</point>
+      <point>457.494 548.332 0.005</point>
+      <point>457.35 548.788 0.005</point>
+      <point>457.202 549.242 0.005</point>
+      <point>457.051 549.692 0.005</point>
+      <point>456.895 550.14 0.005</point>
+      <point>456.736 550.586 0.005</point>
+      <point>456.573 551.029 0.005</point>
+      <point>456.406 551.469 0.005</point>
+      <point>456.236 551.906 0.005</point>
+      <point>456.061 552.341 0.005</point>
+      <point>455.883 552.773 0.005</point>
+      <point>455.701 553.202 0.005</point>
+      <point>455.516 553.628 0.005</point>
+      <point>455.326 554.052 0.005</point>
+      <point>455.133 554.473 0.005</point>
+      <point>454.936 554.891 0.005</point>
+      <point>454.736 555.307 0.005</point>
+      <point>454.532 555.719 0.005</point>
+      <point>454.324 556.129 0.005</point>
+      <point>454.113 556.536 0.005</point>
+      <point>453.898 556.94 0.005</point>
+      <point>453.679 557.341 0.005</point>
+      <point>453.457 557.739 0.005</point>
+      <point>453.231 558.134 0.005</point>
+      <point>453.002 558.527 0.005</point>
+      <point>452.769 558.916 0.005</point>
+      <point>452.533 559.303 0.005</point>
+      <point>452.293 559.686 0.005</point>
+      <point>452.049 560.067 0.005</point>
+      <point>451.802 560.445 0.005</point>
+      <point>451.551 560.82 0.005</point>
+      <point>451.297 561.191 0.005</point>
+      <point>451.04 561.56 0.005</point>
+      <point>450.779 561.926 0.005</point>
+      <point>450.515 562.288 0.005</point>
+      <point>450.247 562.648 0.005</point>
+      <point>449.976 563.004 0.005</point>
+      <point>449.701 563.358 0.005</point>
+      <point>449.423 563.708 0.005</point>
+      <point>449.142 564.056 0.005</point>
+      <point>448.857 564.4 0.005</point>
+      <point>448.569 564.741 0.005</point>
+      <point>448.277 565.079 0.005</point>
+      <point>447.983 565.413 0.005</point>
+      <point>447.685 565.745 0.005</point>
+      <point>447.383 566.073 0.005</point>
+      <point>447.078 566.399 0.005</point>
+      <point>446.77 566.721 0.005</point>
+      <point>446.459 567.039 0.005</point>
+      <point>446.145 567.355 0.005</point>
+      <point>445.827 567.667 0.005</point>
+      <point>445.506 567.976 0.005</point>
+      <point>445.182 568.282 0.005</point>
+      <point>444.855 568.584 0.005</point>
+      <point>444.524 568.884 0.005</point>
+      <point>444.191 569.179 0.005</point>
+      <point>443.854 569.472 0.005</point>
+      <point>443.514 569.761 0.005</point>
+      <point>443.171 570.047 0.005</point>
+      <point>442.824 570.33 0.005</point>
+      <point>442.475 570.609 0.005</point>
+      <point>442.123 570.885 0.005</point>
+      <point>441.767 571.157 0.005</point>
+      <point>441.409 571.426 0.005</point>
+      <point>441.047 571.691 0.005</point>
+      <point>440.682 571.953 0.005</point>
+      <point>440.315 572.212 0.005</point>
+      <point>439.944 572.467 0.005</point>
+      <point>439.57 572.719 0.005</point>
+      <point>439.193 572.967 0.005</point>
+      <point>438.814 573.212 0.005</point>
+      <point>438.431 573.453 0.005</point>
+      <point>438.045 573.691 0.005</point>
+      <point>437.657 573.925 0.005</point>
+      <point>437.265 574.155 0.005</point>
+      <point>436.871 574.382 0.005</point>
+      <point>436.474 574.606 0.005</point>
+      <point>436.074 574.825 0.005</point>
+      <point>435.671 575.042 0.005</point>
+      <point>435.265 575.254 0.005</point>
+      <point>434.856 575.463 0.005</point>
+      <point>434.444 575.668 0.005</point>
+      <point>434.03 575.87 0.005</point>
+      <point>433.613 576.068 0.005</point>
+      <point>433.193 576.262 0.005</point>
+      <point>432.77 576.453 0.005</point>
+      <point>432.344 576.64 0.005</point>
+      <point>431.916 576.823 0.005</point>
+      <point>431.485 577.002 0.005</point>
+      <point>431.051 577.178 0.005</point>
+      <point>430.615 577.35 0.005</point>
+      <point>430.176 577.518 0.005</point>
+      <point>429.734 577.682 0.005</point>
+      <point>429.289 577.843 0.005</point>
+      <point>428.842 577.999 0.005</point>
+      <point>428.392 578.152 0.005</point>
+      <point>427.94 578.301 0.005</point>
+      <point>427.484 578.447 0.005</point>
+      <point>427.027 578.588 0.005</point>
+      <point>426.566 578.725 0.005</point>
+      <point>426.103 578.859 0.005</point>
+      <point>425.638 578.989 0.005</point>
+      <point>425.17 579.114 0.005</point>
+      <point>424.699 579.236 0.005</point>
+      <point>424.226 579.354 0.005</point>
+      <point>423.75 579.468 0.005</point>
+      <point>423.272 579.578 0.005</point>
+      <point>422.791 579.684 0.005</point>
+      <point>422.308 579.786 0.005</point>
+      <point>421.822 579.884 0.005</point>
+      <point>421.334 579.978 0.005</point>
+      <point>420.844 580.067 0.005</point>
+      <point>420.351 580.153 0.005</point>
+      <point>419.855 580.235 0.005</point>
+      <point>419.357 580.313 0.005</point>
+      <point>418.774 580.398 0.005</point>
+      <point>418.187 580.478 0.005</point>
+      <point>417.596 580.552 0.005</point>
+      <point>417.003 580.621 0.005</point>
+      <point>416.406 580.684 0.005</point>
+      <point>415.806 580.742 0.005</point>
+      <point>415.204 580.793 0.005</point>
+      <point>414.597 580.839 0.005</point>
+      <point>413.988 580.879 0.005</point>
+      <point>413.376 580.914 0.005</point>
+      <point>412.761 580.943 0.005</point>
+      <point>412.143 580.966 0.005</point>
+      <point>411.521 580.983 0.005</point>
+      <point>410.897 580.994 0.005</point>
+      <point>410.27 580.999 0.005</point>
+      <point>410 581 0.005</point>
+    </road>
+    <road name="road_24">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>410 581 0.005</point>
+      <point>-100 581 0.005</point>
+    </road>
+    <road name="road_25">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>-100 581 0.005</point>
+      <point>-100.629 580.997 0.005</point>
+      <point>-101.254 580.988 0.005</point>
+      <point>-101.877 580.974 0.005</point>
+      <point>-102.496 580.953 0.005</point>
+      <point>-103.113 580.927 0.005</point>
+      <point>-103.726 580.895 0.005</point>
+      <point>-104.337 580.857 0.005</point>
+      <point>-104.944 580.814 0.005</point>
+      <point>-105.548 580.764 0.005</point>
+      <point>-106.15 580.709 0.005</point>
+      <point>-106.748 580.649 0.005</point>
+      <point>-107.342 580.583 0.005</point>
+      <point>-107.934 580.511 0.005</point>
+      <point>-108.522 580.433 0.005</point>
+      <point>-109.108 580.35 0.005</point>
+      <point>-109.69 580.261 0.005</point>
+      <point>-110.186 580.181 0.005</point>
+      <point>-110.68 580.097 0.005</point>
+      <point>-111.171 580.008 0.005</point>
+      <point>-111.66 579.915 0.005</point>
+      <point>-112.146 579.819 0.005</point>
+      <point>-112.63 579.718 0.005</point>
+      <point>-113.112 579.614 0.005</point>
+      <point>-113.591 579.505 0.005</point>
+      <point>-114.068 579.392 0.005</point>
+      <point>-114.542 579.276 0.005</point>
+      <point>-115.013 579.155 0.005</point>
+      <point>-115.482 579.031 0.005</point>
+      <point>-115.948 578.903 0.005</point>
+      <point>-116.412 578.77 0.005</point>
+      <point>-116.873 578.634 0.005</point>
+      <point>-117.332 578.494 0.005</point>
+      <point>-117.788 578.35 0.005</point>
+      <point>-118.242 578.202 0.005</point>
+      <point>-118.692 578.051 0.005</point>
+      <point>-119.14 577.895 0.005</point>
+      <point>-119.586 577.736 0.005</point>
+      <point>-120.029 577.573 0.005</point>
+      <point>-120.469 577.406 0.005</point>
+      <point>-120.906 577.236 0.005</point>
+      <point>-121.341 577.061 0.005</point>
+      <point>-121.773 576.883 0.005</point>
+      <point>-122.202 576.701 0.005</point>
+      <point>-122.628 576.516 0.005</point>
+      <point>-123.052 576.326 0.005</point>
+      <point>-123.473 576.133 0.005</point>
+      <point>-123.891 575.936 0.005</point>
+      <point>-124.307 575.736 0.005</point>
+      <point>-124.719 575.532 0.005</point>
+      <point>-125.129 575.324 0.005</point>
+      <point>-125.536 575.113 0.005</point>
+      <point>-125.94 574.898 0.005</point>
+      <point>-126.341 574.679 0.005</point>
+      <point>-126.739 574.457 0.005</point>
+      <point>-127.134 574.231 0.005</point>
+      <point>-127.527 574.002 0.005</point>
+      <point>-127.916 573.769 0.005</point>
+      <point>-128.303 573.533 0.005</point>
+      <point>-128.686 573.293 0.005</point>
+      <point>-129.067 573.049 0.005</point>
+      <point>-129.445 572.802 0.005</point>
+      <point>-129.82 572.551 0.005</point>
+      <point>-130.191 572.297 0.005</point>
+      <point>-130.56 572.04 0.005</point>
+      <point>-130.926 571.779 0.005</point>
+      <point>-131.288 571.515 0.005</point>
+      <point>-131.648 571.247 0.005</point>
+      <point>-132.004 570.976 0.005</point>
+      <point>-132.358 570.701 0.005</point>
+      <point>-132.708 570.423 0.005</point>
+      <point>-133.056 570.142 0.005</point>
+      <point>-133.4 569.857 0.005</point>
+      <point>-133.741 569.569 0.005</point>
+      <point>-134.079 569.277 0.005</point>
+      <point>-134.413 568.983 0.005</point>
+      <point>-134.745 568.685 0.005</point>
+      <point>-135.073 568.383 0.005</point>
+      <point>-135.399 568.078 0.005</point>
+      <point>-135.721 567.77 0.005</point>
+      <point>-136.039 567.459 0.005</point>
+      <point>-136.355 567.145 0.005</point>
+      <point>-136.667 566.827 0.005</point>
+      <point>-136.976 566.506 0.005</point>
+      <point>-137.282 566.182 0.005</point>
+      <point>-137.584 565.855 0.005</point>
+      <point>-137.884 565.524 0.005</point>
+      <point>-138.179 565.191 0.005</point>
+      <point>-138.472 564.854 0.005</point>
+      <point>-138.761 564.514 0.005</point>
+      <point>-139.047 564.171 0.005</point>
+      <point>-139.33 563.824 0.005</point>
+      <point>-139.609 563.475 0.005</point>
+      <point>-139.885 563.123 0.005</point>
+      <point>-140.157 562.767 0.005</point>
+      <point>-140.426 562.409 0.005</point>
+      <point>-140.691 562.047 0.005</point>
+      <point>-140.953 561.682 0.005</point>
+      <point>-141.212 561.315 0.005</point>
+      <point>-141.467 560.944 0.005</point>
+      <point>-141.719 560.57 0.005</point>
+      <point>-141.967 560.193 0.005</point>
+      <point>-142.212 559.814 0.005</point>
+      <point>-142.453 559.431 0.005</point>
+      <point>-142.691 559.045 0.005</point>
+      <point>-142.925 558.657 0.005</point>
+      <point>-143.155 558.265 0.005</point>
+      <point>-143.382 557.871 0.005</point>
+      <point>-143.606 557.474 0.005</point>
+      <point>-143.825 557.074 0.005</point>
+      <point>-144.042 556.671 0.005</point>
+      <point>-144.254 556.265 0.005</point>
+      <point>-144.463 555.856 0.005</point>
+      <point>-144.668 555.444 0.005</point>
+      <point>-144.87 555.03 0.005</point>
+      <point>-145.068 554.613 0.005</point>
+      <point>-145.262 554.193 0.005</point>
+      <point>-145.453 553.77 0.005</point>
+      <point>-145.64 553.344 0.005</point>
+      <point>-145.823 552.916 0.005</point>
+      <point>-146.002 552.485 0.005</point>
+      <point>-146.178 552.051 0.005</point>
+      <point>-146.35 551.615 0.005</point>
+      <point>-146.518 551.176 0.005</point>
+      <point>-146.682 550.734 0.005</point>
+      <point>-146.843 550.289 0.005</point>
+      <point>-146.999 549.842 0.005</point>
+      <point>-147.152 549.392 0.005</point>
+      <point>-147.301 548.94 0.005</point>
+      <point>-147.447 548.484 0.005</point>
+      <point>-147.588 548.027 0.005</point>
+      <point>-147.725 547.566 0.005</point>
+      <point>-147.859 547.103 0.005</point>
+      <point>-147.989 546.638 0.005</point>
+      <point>-148.114 546.17 0.005</point>
+      <point>-148.236 545.699 0.005</point>
+      <point>-148.354 545.226 0.005</point>
+      <point>-148.468 544.75 0.005</point>
+      <point>-148.578 544.272 0.005</point>
+      <point>-148.684 543.791 0.005</point>
+      <point>-148.786 543.308 0.005</point>
+      <point>-148.884 542.822 0.005</point>
+      <point>-148.978 542.334 0.005</point>
+      <point>-149.067 541.844 0.005</point>
+      <point>-149.153 541.351 0.005</point>
+      <point>-149.235 540.855 0.005</point>
+      <point>-149.313 540.357 0.005</point>
+      <point>-149.398 539.774 0.005</point>
+      <point>-149.478 539.187 0.005</point>
+      <point>-149.552 538.596 0.005</point>
+      <point>-149.621 538.003 0.005</point>
+      <point>-149.684 537.406 0.005</point>
+      <point>-149.742 536.806 0.005</point>
+      <point>-149.793 536.204 0.005</point>
+      <point>-149.839 535.597 0.005</point>
+      <point>-149.879 534.988 0.005</point>
+      <point>-149.914 534.376 0.005</point>
+      <point>-149.943 533.761 0.005</point>
+      <point>-149.966 533.143 0.005</point>
+      <point>-149.983 532.521 0.005</point>
+      <point>-149.994 531.897 0.005</point>
+      <point>-149.999 531.27 0.005</point>
+      <point>-150 531 0.005</point>
+    </road>
+    <road name="road_26">
+      <width>8</width>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/road_textures.material</uri>
+          <name>UGVLecture/TwoWayDashed</name>
+        </script>
+      </material>
+      <point>-150 531 0.005</point>
+      <point>-150 283 0.005</point>
+    </road>
+  </world>
+</sdf>
