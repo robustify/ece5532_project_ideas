@@ -15,7 +15,10 @@ This project uses the same Audibot simulator that was used throughout the course
 
 ## IGVC Simulation
 
-The Intelligent Ground Vehicle Competition (IGVC) is hosted every year at Oakland University. IGVC is a collegiate robotics competition where participants build and program an unmanned ground vehicle to navigate an outdoor course consisting of painted lines and obstacles.
+The Intelligent Ground Vehicle Competition (IGVC) is hosted every year at Oakland University.
+IGVC is a collegiate robotics competition where participants build and program an unmanned ground vehicle to navigate an outdoor course consisting of painted lines and obstacles.
+Here is a video of a robot running the course at the 2013 competition:
+[YouTube Link](https://www.youtube.com/embed/Mt4OGEdjHuw?rel=0&autoplay=1)
 
 This project involves simulating the obstacle course and implementing a ROS-based software system to get through it. For more details, see the [project-specific README](igvc_sim/README.md)
 
