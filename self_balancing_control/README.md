@@ -68,7 +68,7 @@ Due to the complexity of the system, formulating an accurate model by applying N
 Therefore, principles of Lagrangian mechanics are used instead.
 
 First, the Lagrangian is found by subtracting the total potential energy of the system from the total kinetic energy of the system.
-The kinetic energy of the system is the sum of the translational kinetic energy of the base, translational kinematic energy of the body, and the rotational kinetic energy of the body:
+The kinetic energy of the system is the sum of the translational kinetic energy of the base, translational kinetic energy of the body, and the rotational kinetic energy of the body:
 
 $$K = \frac{1}{2}m_1\dot{x}^2 + \frac{1}{2}m_2\left(\dot{x_c}^2+\dot{z_c}^2\right) + \frac{1}{2}J\dot{\theta}^2$$
 
