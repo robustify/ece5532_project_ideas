@@ -1,25 +1,54 @@
 # Self-Balancing Robot Control
 
+This project involves implementing a control system for a self-balancing robot in Gazebo by processing simulated IMU data and issuing commands to the wheels of the robot.
+
 ## Objectives
 
-The goals for this project can be split into three levels, each building on the previous levels.
+The goals for this project can be split into three levels of increasing complexity.
 
-### Level 1: Implment State Feedback Stabilizer
+### Level 1: Implement PID Stabilizer
 
-- Clone the teeterbot self-balancing robot simulator from Github: [https://github.com/robustify/teeterbot](https://github.com/robustify/teeterbot)
-- Read `teeterbot`'s documentation to learn how to configure and start the simulation.
-- Study the state feedback controller design outlined below and implement the controller in a ROS node.
-- Set up launch file(s) to run the simulation and the controller.
+- Read `teeterbot`'s documentation in the GitHub README to learn how it works.
+- Implement a PID feedback control system in a ROS node that measures the pitch angle using a simulated IMU and balances the robot by controlling the wheel speeds to force the pitch angle to zero.
 - Test the robustness of the controller by applying external force to the self-balancing robot using the `/teeterbot/nudge` service.
 
-### Level 2: Extend State Feedback Stabilizer
+### Level 2: Implement State Feedback Stabilizer
 
-Instead of just balancing the robot and coming to a stop, extend the stabilizer into a regulator that tracks a speed reference input.
+- Study the state feedback controller design outlined below and implement the controller in a ROS node that subscribes to topics containing the required input data and publishes wheel torque commands to `teeterbot`.
+- The dynamics parameters for the model like the wheel mass and radius, and body mass and length, can be found in the arguments set in `run_simulation.launch`.
+- Modify the provided launch file to expose a wheel torque command interface instead of a wheel speed command interface.
+- Test the robustness of the controller by applying external force to the self-balancing robot using the `/teeterbot/nudge` service.
 
-### Level 3: Implement a Complete Drive Control System
+### Level 3: Extend State Feedback Stabilizer
 
-Extend the speed regulator from Level 2 to input a complete `geometry_msgs/Twist` message that includes speed and yaw rate commands.
-Apply differential drive kinematics from to control the relative difference in wheel speeds to track the yaw rate command.
+Instead of just balancing the robot and coming to a stop, extend the state feedback stabilizer from Level 2 into a regulator that tracks a speed reference input.
+
+## Getting Started
+
+Clone the `teeterbot` self-balancing robot simulator from Github into your ROS workspace: [https://github.com/robustify/teeterbot](https://github.com/robustify/teeterbot)
+
+After cloning, you need to install some missing dependencies. Run `deps.bash` from the root of your ROS workspace folder to automatically install these dependencies:
+```
+cd ros
+deps.bash
+```
+
+The starting point of the system can be started with the provided launch file:
+
+```
+roslaunch self_balancing_control run_simulation.launch
+```
+Measurements of the current wheel speeds in rad/s are available on the `/teeterbot/left_wheel_speed` and `/teeterbot/right_wheel_speed` topics.
+
+Simulated IMU data is available on `/teeterbot/imu`. The `sensor_msgs/Imu` messages on this topic contain raw accelerometer and gyroscope data in the `linear_acceleration` and `angular_velocity` fields.
+
+The IMU data also contains a quaternion representing the 3D orientation of the vehicle in the `orientation` field. This quaternion can be processed to obtain the pitch angle measurement that is required for feedback in both the PID and state feedback stabilizer algorithms.
+
+The `/teeterbot/fallen_over` topic contains `std_msgs/Bool` messages that indicate if the vehicle has fallen over or not. It would probably help to reset the PID and state feedback controllers when this happens...
+
+To practice sending control messages to `teeterbot` before implementing the control systems and have the vehicle not continuously tip over, change the `training_wheels` argument in `run_simulation.launch` from false to true. This spawns invisible, frictionless pieces of the robot that makes it always stay upright.
+
+Below is the derivation of the state feedback controller model for Level 2 that can also be extended into a state feedback regulator for Level 3.
 
 ## Diagram of the System
 
@@ -172,7 +201,7 @@ $$\text{rank}\left(\begin{bmatrix}B & AB & A^2B\end{bmatrix}\right)=3 \rightarro
 
 ## Linear State Feedback Stabilizer Design
 
-Assuming that all three states of the state space model are measureable, a state feedback gain matrix $K$ can be defined such that the input command $F_x=-Kx$.
+Assuming that all three states of the state space model are measurable, a state feedback gain matrix $K$ can be defined such that the input command $F_x=-Kx$.
 With an appropriate $K$ matrix, the system will be driven toward the equilibrium point by actively controlling the force input $F_x$.
 
 $$\dot{x} = Ax+Bu = Ax+B\left(-Kx\right)$$
@@ -186,16 +215,16 @@ A block diagram of the static linear state feedback controller is shown here:
 </p>
 
 The $K$ matrix is selected in such a way as to place the poles of the system at stable values. This is done by setting the eigenvalues of the $A-BK$ matrix, and then solving for the elements of $K$.
-MATLAB's `place` command is available to do exactly this!
+MATLAB's `place` command is available to do exactly this! [https://www.mathworks.com/help/control/ref/place.html](https://www.mathworks.com/help/control/ref/place.html)
 
 **To compute the output force $F_x$ in your ROS node, you need the three elements of the $K$ matrix designed with `place`, and measurements of $\dot{x}$, $\theta$, and $\dot{\theta}$.**
 
 $$F_x = -Kx\ \Rightarrow\ F_x = -k_1\dot{x} - k_2\theta - k_3\dot{\theta}$$
 
 $\dot{x}$ is the vehicle speed, $\theta$ is the pitch angle of the body, and $\dot{\theta}$ is the angular rate of the body's pitch angle.
-The vehicle speed measurement comes from wheel speed measurements and wheel radius.
-Pitch angle comes from the quaternion orientation in the simulated IMU message:
 
-$TODO$
+## Extending the Stabilizer into a Regulator
 
-and pitch rate comes directly from the `angular_velocity` field of the IMU message.
+The control law equation can be extended to track a speed reference input by simply offsetting the velocity measurement $\dot{x}$ by the desired target speed $\dot{x}_c$:
+
+$$F_x = -Kx\ \Rightarrow\ F_x = -k_1(\dot{x} - \dot{x}_c) - k_2\theta - k_3\dot{\theta}$$

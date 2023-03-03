@@ -9,18 +9,21 @@ This project uses two instances of the Audibot simulator that was used throughou
 
 ## Audibot Urban Navigation
 
-This project uses the same Audibot simulator that was used throughout the course, but it is spawned in `urban_world` with a camera to detect lane markings. The goal is to navigate around this world making turns at intersections to reach a goal. For more details, see the [project-specific README](audibot_urban_nav/README.md)
+This project uses the same Audibot simulator that was used throughout the course, but it is spawned in `urban_world` with a camera to detect lane markings. The goal is to navigate around this world making turns at intersections to reach a destination. For more details, see the [project-specific README](audibot_urban_nav/README.md)
 
 ![Road World](img/urban_world.png)
 
-## IGVC Simulation
+## IGVC Robot Sensor Processing
 
-The Intelligent Ground Vehicle Competition (IGVC) is hosted every year at Oakland University.
-IGVC is a collegiate robotics competition where participants build and program an unmanned ground vehicle to navigate an outdoor course consisting of painted lines and obstacles.
+The Intelligent Ground Vehicle Competition (IGVC) is hosted every year at Oakland University. IGVC is a collegiate robotics competition where participants build and program an unmanned ground vehicle to navigate an outdoor course consisting of painted lines and obstacles.
 Here is a video of a robot running the course at the 2013 competition:
 [YouTube Link](https://www.youtube.com/embed/Mt4OGEdjHuw?rel=0&autoplay=1)
 
-This project involves simulating the obstacle course and implementing a ROS-based software system to get through it. For more details, see the [project-specific README](igvc_sim/README.md)
+This project involves processing data from a ROS bag recorded during one of the official runs by Oakland University's team in the 2014 competition and implementing the perception and mapping systems. For more details, see the [project-specific README](igvc_bag_processing/README.md)
+
+## IGVC Simulation
+
+This project involves simulating the IGVC obstacle course and implementing a ROS-based software system to process simulated sensor data and implement the entire software system required to navigate through it. For more details, see the [project-specific README](igvc_sim/README.md)
 
 <p align="center">
     <img align="middle" alt="Real IGVC Course" src="img/real_igvc_course.png" width="45%">
@@ -29,9 +32,7 @@ This project involves simulating the obstacle course and implementing a ROS-base
 
 ## Self-Balancing Robot Control
 
-This project involves implementing a control system for a self-balancing robot in Gazebo by processing simulated IMU data and controlling the torque to the wheels of the robot.
-
-A state space model of the vehicle dynamics is provided along with a state feedback control architecture, so the bulk of the project would involve implementing this control strategy and potentially investigating extensions to it. For more details, see the [project-specific README](self_balancing_control/README.md)
+This project involves implementing a control system for a self-balancing robot in Gazebo by processing simulated IMU data and issuing commands to the wheels of the robot. For more details, see the [project-specific README](self_balancing_control/README.md)
 
 <p align="center">
     <img alt="Self-Balancing Robot" src="img/self_balancing_robot.png" height="300">

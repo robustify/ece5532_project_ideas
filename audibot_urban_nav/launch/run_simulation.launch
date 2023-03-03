@@ -5,10 +5,10 @@
   <param name="/audibot/gps/ref_lon" value="-83.069858" />
   <include file="$(find audibot_urban_nav)/launch/spawn_audibot.launch">
     <arg name="robot_name" value="audibot" />
-    <arg name="start_x" value="-152.5" />
-    <arg name="start_y" value="275.2" />
-    <arg name="start_z" value="0.3" />
-    <arg name="start_yaw" value="-1.5707" />
+    <arg name="start_x" value="-215" />
+    <arg name="start_y" value="273" />
+    <arg name="start_z" value="0.0" />
+    <arg name="start_yaw" value="0.0" />
     <arg name="pub_tf" value="true" />
     <arg name="tf_freq" value="100.0" />
     <arg name="color" value="orange" />
@@ -19,7 +19,7 @@
   </include>
   <group ns="audibot">
     <node pkg="audibot_path_following" type="audibot_path_following" name="path_following" output="screen">
-      <param name="speed" value="10.0" />
+      <param name="speed" value="0.0" />
     </node>
     <node pkg="audibot_twist_controller" type="audibot_twist_node" name="twist_control" output="screen" />
   </group>
