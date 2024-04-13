@@ -9,6 +9,8 @@
     <arg name="start_y" value="273" />
     <arg name="start_z" value="0.0" />
     <arg name="start_yaw" value="0.0" />
+    <arg name="ref_lat" value="42.853452" />
+    <arg name="ref_lon" value="-83.069858" />
     <arg name="pub_tf" value="true" />
     <arg name="tf_freq" value="100.0" />
     <arg name="color" value="orange" />
