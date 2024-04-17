@@ -174,8 +174,8 @@ B = \left.
     \end{bmatrix}
     \right|_{{F_x=0}\atop{x=0}}
     = \begin{bmatrix}
-    \dfrac{\phi}{1-\alpha}\\ 0 \\ -\dfrac{\beta}{1-\alpha}
-    \end{bmatrix}
+    \dfrac{\phi}{1-\alpha}\qquad 0 \qquad -\dfrac{\beta}{1-\alpha}
+    \end{bmatrix}^T
 $$
 
 The eigenvalues of the $A$ matrix represent the poles of the inverted pendulum system.
