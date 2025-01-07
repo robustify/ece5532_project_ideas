@@ -28,7 +28,7 @@ The provided `start_system.launch` file configures ROS to use a bag file clock b
 roslaunch start_system.launch
 ```
 
-Then, play back the bag file. The file can be downloaded from this link: [IGVC Bag File](https://onedrive.live.com/download?cid=B7FCF91CEE77A2BE&resid=B7FCF91CEE77A2BE%218815&authkey=AE_q29_-Y8T_-Oo)
+Then, play back the bag file. The file can be downloaded from this link: [IGVC Bag File](https://1drv.ms/u/c/b7fcf91cee77a2be/Eb6id-4c-fwggLeEJAAAAAAB6GGLAaWhU5v3YKCciJSLng?e=Gzqjek)
 
 Play the bag file back and configure it to publish the clock source for the system:
 ```
